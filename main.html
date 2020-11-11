@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Аниме магазин</title>
     <link rel="stylesheet" href="style.css" type="text/css"/>
-    <link rel="icon" href="assets/logo.svg" type="image/icon">
+    <link rel="icon" href="assets/little-logo.svg" type="image/icon">
 </head>
 <body>
     <header class="header-container">
         <div class="header">
             <img src="assets/logo.svg" alt="" class="header-logo">
+            <img src="assets/text-logo.png" alt="" class="header-text-logo">
             <a class="header-link">Манга и комиксы</a>
             <a class="header-link">Одежда</a>
             <a class="header-link">Акссесуары</a>
             <a class="header-link">Дакимакуры</a>
             <a class="header-link">Фигурки</a>
-            <a class="header-link">Акции</a>
+            <a class="header-link" style="color: #D62433">Акции</a>
             <div class="header-buttons-container">
                 <a class="header-link-cart"><img src="assets/shopping-cart.svg"/></a>
                 <img src="assets/menu.svg" alt="Expanding menu button" class="header-menu" id="header-menu">
@@ -28,12 +29,84 @@
             <a class="header-mobile-link">Акссесуары</a>
             <a class="header-mobile-link">Дакимакуры</a>
             <a class="header-mobile-link">Фигурки</a>
-            <a class="header-mobile-link">Акции</a>
+            <a class="header-mobile-link" style="color: #D62433">Акции</a>
         </div>
     </header>
-    <div class="banner">
+    <div class="page-width">
+        <div class="hit-goods">
+            <ul class="grid hit-goods-grid">
+                <li class="hit-goods-grid-container one-third">
+                    <a class="hit-goods-grid-item">
+                        <div class="hit-goods-grid-item-image" style="background-image: url(figures/alphons-fa.jpg);"></div>
+                        <div class="hit-goods-grid-item-text-container">
+                            <h3 class="hit-goods-grid-item-title">Альфонс Элрик - Fullmetal Alchimist</h3>
+                        </div>
+                    </a>
+                </li>
+                <li class="hit-goods-grid-container one-third">
+                    <a class="hit-goods-grid-item">
+                        <div class="hit-goods-grid-item-image" style="background-image: url(figures/geos-opm.jpg);"></div>
+                        <div class="hit-goods-grid-item-text-container">
+                            <h3 class="hit-goods-grid-item-title">Геос - One Punch Man</h3>
+                        </div>
+                    </a>
+                </li>
+                <li class="hit-goods-grid-container one-third">
+                    <a class="hit-goods-grid-item">
+                        <div class="hit-goods-grid-item-image" style="background-image: url(figures/black-rock-shooter3.jpg);"></div>
+                        <div class="hit-goods-grid-item-text-container">
+                            <h3 class="hit-goods-grid-item-title">Black★Rock Shooter</h3>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="hit-goods-grid-container one-third">
+                    <a class="hit-goods-grid-item">
+                        <div class="hit-goods-grid-item-image" style="background-image: url(figures/leafa-sao.jpeg);"></div>
+                        <div class="hit-goods-grid-item-text-container">
+                            <h3 class="hit-goods-grid-item-title">Лифа - Sword Art Online</h3>
+                        </div>
+                    </a>
+                </li>
+                <li class="hit-goods-grid-container one-third">
+                    <a class="hit-goods-grid-item">
+                        <div class="hit-goods-grid-item-image" style="background-image: url(figures/vocaloid.jpg);"></div>
+                        <div class="hit-goods-grid-item-text-container">
+                            <h3 class="hit-goods-grid-item-title">Кагамэ Рин - Vocaloid Series 02</h3>
+                        </div>
+                    </a>
+                </li>
+                <li class="hit-goods-grid-container one-third">
+                    <a class="hit-goods-grid-item">
+                        <div class="hit-goods-grid-item-image" style="background-image: url(figures/touka-kirishima.jpg);"></div>
+                        <div class="hit-goods-grid-item-text-container">
+                            <h3 class="hit-goods-grid-item-title">Тоука Киришима - Tokio Ghoul</h3>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="hit-goods-grid-container one-half">
+                    <a class="hit-goods-grid-item">
+                        <div class="hit-goods-grid-item-image" style="background-image: url(figures/rem-re-zero.jpg);"></div>
+                        <div class="hit-goods-grid-item-text-container">
+                            <h3 class="hit-goods-grid-item-title">Рем - Re:Zero</h3>
+                        </div>
+                    </a>
+                </li>
+                <li class="hit-goods-grid-container one-half">
+                    <a class="hit-goods-grid-item">
+                        <div class="hit-goods-grid-item-image" style="background-image: url(figures/miyuki-rena-ryugu-when-they-cry-gou.jpg);"></div>
+                        <div class="hit-goods-grid-item-text-container">
+                            <h3 class="hit-goods-grid-item-title">Миюки Рена Рюгу - Когда плачут цикады</h3>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner fall-bg">
         <div class="banner-socials">
-            <p>Мы в социальный сетях</p>
+            <p>Мы в социальных сетях</p>
             <a href="">
                 <img src="assets/facebook-logotype.svg" alt="Facebook logo">
             </a>
@@ -78,37 +151,32 @@
             </div>
             <div class="footer-nav-col">
                 <div class="footer-nav-col-container">
-                    <h5 class="footer-nav-title">Влаштування</h5>
+                    <h5 class="footer-nav-title">ПРО KITSUNE SHOP</h5>
                     <p class="footer-nav-item">
-                        <a href="" class="footer-nav-link">- Знайти господаря для собачки</a>
+                        <a href="" class="footer-nav-link">Новости Kitsune</a>
                     </p>
                     <p class="footer-nav-item">
-                        <a href="" class="footer-nav-link">- Знайти господаря для котика</a>
-                    </p>
-                    <h5 class="footer-nav-title">Пошук</h5>
-                    <p class="footer-nav-item">
-                        <a href="" class="footer-nav-link">- Загублені</a>
+                        <a href="" class="footer-nav-link">Условия использования</a>
                     </p>
                     <p class="footer-nav-item">
-                        <a href="" class="footer-nav-link">- Знайдені</a>
+                        <a href="" class="footer-nav-link">Политика авторских прав</a>
+                    </p>
+                    <p class="footer-nav-item">
+                        <a href="" class="footer-nav-link">Политика конфиденциальности</a>
                     </p>
                 </div>
             </div>
             <div class="footer-nav-col">
                 <div class="footer-nav-col-container">
-                    <h5 class="footer-nav-title">Влаштування</h5>
+                    <h5 class="footer-nav-title">ПОЛЕЗНЫЕ ССЫЛКИ</h5>
                     <p class="footer-nav-item">
-                        <a href="" class="footer-nav-link">- Знайти господаря для собачки</a>
+                        <a href="" class="footer-nav-link">Вход в систему</a>
                     </p>
                     <p class="footer-nav-item">
-                        <a href="" class="footer-nav-link">- Знайти господаря для котика</a>
-                    </p>
-                    <h5 class="footer-nav-title">Пошук</h5>
-                    <p class="footer-nav-item">
-                        <a href="" class="footer-nav-link">- Загублені</a>
+                        <a href="" class="footer-nav-link">Стать премиум-подпсичиком</a>
                     </p>
                     <p class="footer-nav-item">
-                        <a href="" class="footer-nav-link">- Знайдені</a>
+                        <a href="" class="footer-nav-link">Отложенные предварительные заказы</a>
                     </p>
                 </div>
             </div>
