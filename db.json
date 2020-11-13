@@ -1,4 +1,137 @@
-{
-  "id": 1,
-  "title": "hello"
-}
+{"products": [
+  {
+    "url": "alphonse_elric",
+    "productName": "Альфонс Элрик - Fullmetal Alchimist",
+    "productDescription": "",
+    "price": 155.05,
+    "images": ["figures/alphons-fa.jpg"],
+    "categoryId": 5,
+    "recommended": true
+  },
+  {
+    "url": "geos",
+    "productName": "Геос - One Punch Man",
+    "productDescription": "",
+    "price": 155.05,
+    "images": ["figures/geos-opm.jpg"],
+    "categoryId": 5,
+    "recommended": true
+  },
+  {
+    "url": "black_rock_shooter",
+    "productName": "Black★Rock Shooter",
+    "productDescription": "",
+    "price": 155.05,
+    "images": ["figures/black-rock-shooter3"],
+    "categoryId": 5,
+    "recommended": true
+  },
+  {
+    "url": "leafa",
+    "productName": "Лифа - Sword Art Online",
+    "productDescription": "",
+    "price": 155.05,
+    "images": ["figures/leafa-sao.jpeg"],
+    "categoryId": 5,
+    "recommended": true
+  },
+  {
+    "url": "kagame_rin",
+    "productName": "Кагамэ Рин - Vocaloid Series 02",
+    "productDescription": "",
+    "price": 155.05,
+    "images": ["figures/vocaloid.jpg"],
+    "categoryId": 5,
+    "recommended": true
+  },
+  {
+    "url": "touka_kirishima",
+    "productName": "Тоука Киришима - Tokio Ghoul",
+    "productDescription": "",
+    "price": 155.05,
+    "images": ["figures/touka-kirishima.jpg"],
+    "categoryId": 5,
+    "recommended": true
+  },
+  {
+    "url": "rem",
+    "productName": "Рем - Re:Zero",
+    "productDescription": "",
+    "price": 155.05,
+    "images": ["figures/rem-re-zero.jpg"],
+    "categoryId": 5,
+    "recommended": true
+  },
+  {
+    "url": "miuki_rena_ryugu",
+    "productName": "Миюки Рена Рюгу - Когда плачут цикады",
+    "productDescription": "",
+    "price": 155.05,
+    "images": ["figures/miyuki-rena-ryugu-when-they-cry-gou.jpg"],
+    "categoryId": 5,
+    "recommended": true
+  },
+  {
+    "url": "sao_tom1",
+    "productName": "Sword Art Online Tom 1",
+    "productDescription": "",
+    "price": 155.05,
+    "images": ["path/to/cdn.jpg"],
+    "categoryId": 1,
+    "recommended": true
+  },
+  {
+    "url": "t-shirt",
+    "productName": "Футболка",
+    "productDescription": "",
+    "price": 155.05,
+    "images": ["path/to/cdn.jpg"],
+    "categoryId": 2,
+    "recommended": true
+  },
+  {
+    "url": "drill_necklace",
+    "productName": "Ожерелье с буром - Gurren Laggan",
+    "productDescription": "",
+    "price": 155.05,
+    "images": ["path/to/cdn.jpg"],
+    "categoryId": 3,
+    "recommended": true
+  },
+  {
+    "url": "taiga",
+    "productName": "Дакимакура Тайги - Doradora",
+    "productDescription": "",
+    "price": 155.05,
+    "images": ["path/to/cdn.jpg"],
+    "categoryId": 4,
+    "recommended": true
+  }
+],
+"productsCategories": [
+  {
+    "id": 1,
+    "url": "manga&comics",
+    "name": "Манга и комиксы"
+  },
+  {
+    "id": 2,
+    "url": "clothing",
+    "name": "Одежда"
+  },
+  {
+    "id": 3,
+    "url": "accessory",
+    "name": "Аксессуары"
+  },
+  {
+    "id": 4,
+    "url": "dakimakura",
+    "name": "Дакимакуры"
+  },
+  {
+    "id": 5,
+    "url": "figurine",
+    "name": "Фигурки"
+  }
+]}

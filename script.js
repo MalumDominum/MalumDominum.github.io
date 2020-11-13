@@ -1,4 +1,8 @@
 'use strict';
+
+xhttp.open("GET", "", true);
+xhttp.send();
+
 let menuButton = document.getElementById("header-menu");
 const headerMobile = document.getElementById("header-mobile");
 menuButton.addEventListener('click', function () {
