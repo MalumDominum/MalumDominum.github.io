@@ -1,14 +1,56 @@
 'use strict';
+const request = new Request(
+  "https://my-json-server.typicode.com/MalumDominum/MalumDominum.github.io/products");
+//======================Routing=====================
+fetch(request)
+  .then(function(response) {
+    return response.blob();
+  }).then(async function(blob) {
+    const products = JSON.parse(await blob.text());
+    let pageWidth = document.getElementsByClassName("hit-goods-grid")[0];
+    let goods = [];
+    let max = Math.floor(products.count);
+    for(let i = 0; i < 8; i++) {
+      //let randomProduct = products[Math.floor(Math.random() * max)];
+      goods.push(document.createElement("li"));
+      if (i < 6) { goods[i].classList.add("hit-goods-grid-container", "one-third"); }
+      else { goods[i].classList.add("hit-goods-grid-container", "one-half"); }
+      goods[i].innerHTML = 
+     `<a class="hit-goods-grid-item" data-route="#product/${products[i].url}">
+        <div class="hit-goods-grid-item-image" style="background-image: url(${products[i].images[0]});"></div>
+        <div class="hit-goods-grid-item-text-container">
+          <h3 class="hit-goods-grid-item-title">${products[i].productName}</h3>
+        </div>
+      </a>`;
+      pageWidth.appendChild(goods[i]);
+    }
+  });
 
-xhttp.open("GET", "", true);
-xhttp.send();
+function initiateRoutes() {
+  let routeElements = document.querySelectorAll('[data-route]');
+  routeElements.forEach(function(routeElement) {
+    routeElement.addEventListener('click', function() {
+      history.pushState(null, null, routeElement.dataset.route);
+    });
+  });
+};
 
+initiateRoutes();
+//==============Buttons-for-Mobile==============
 let menuButton = document.getElementById("header-menu");
 const headerMobile = document.getElementById("header-mobile");
 menuButton.addEventListener('click', function () {
     headerMobile.classList.toggle('hidden')
-})
+});
 
+const footerPanels = document.getElementsByClassName("footer-nav-mobile-title");
+const footerContainers = document.getElementsByClassName("footer-nav-container-mobile");
+for (let i = 0; i < 3; i++) {
+  footerPanels[i].addEventListener('click', function () {
+    footerContainers[i].classList.toggle('hidden')
+})};
+
+//======================Slider======================
 var multiItemSlider = (function () {
 
     function _isElementVisible(element) {
