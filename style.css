@@ -74,11 +74,11 @@ a {
     content: '';
 }
 
-.header-link:hover {
+.header-parent-link:hover > .header-link {
     color: #FFB7C5;
 }
 
-.header-link:hover::after {
+.header-parent-link:hover > .header-link::after {
     opacity: 1;
     background: #FFB7C5;
 }
@@ -97,6 +97,28 @@ a {
 .header-link-cart > img {
     width: 26px;
     margin-bottom: -5px;
+}
+
+.header-expanding-panel {
+    display: none;
+    width: 100%;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    top: 80%;
+    left: 0;
+    text-align: center;
+    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.8);
+}
+
+.header-parent-link:hover > .header-expanding-panel {
+    padding: 45px;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: auto;
 }
 
 .header-mobile {
@@ -312,6 +334,31 @@ ul {
     height: 100px;
 }
 
+.fall-bg {
+    position: relative;
+ }
+ 
+.fall-bg:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('assets/leaves1.svg'), url('assets/leaves2.svg');
+    pointer-events: none;
+    background-size: 500px, 400px;
+    animation: fall 20s linear infinite;
+ }
+
+ @keyframes fall {
+  0% {background-position: 0px 0px, 0px 0px;}
+  50% {background-position: -250px 500px, 150px 200px;}
+  100% {background-position: 0 1000px, 0 400px;}
+ }
+
 /*===================footer===================*/
 
 .footer {
@@ -324,12 +371,13 @@ ul {
 .footer-nav {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 10px;
+    margin: 30px 0;
+    justify-content: center;
     line-height: 1.1;
 }
 
 .footer-nav-col {
-    width: 33%;
+    width: 33.3%;
     min-width: 100px;
     margin-bottom: 20px;
 }
@@ -358,22 +406,16 @@ ul {
 
 .footer-nav-mobile {
     display: none;
-}
-
-.footer-nav-mobile-panel:first-of-type {
-    border-top: 1px solid #d8d8d8;
-    width: 90%;
-    margin-top: 30px;
-}
-
-.footer-nav-mobile-panel:last-of-type {
-    margin-bottom: 30px;
+    max-width: 100%;
 }
 
 .footer-nav-mobile-panel {
     padding: 15px 0;
     border-bottom: 1px solid #d8d8d8;
-    width: 90%;
+}
+
+.footer-nav-mobile-panel:first-of-type {
+    border-top: 1px solid #d8d8d8;
 }
 
 .footer-nav-mobile-title {
@@ -389,31 +431,6 @@ ul {
 .footer-nav-container-mobile.hidden {
     display: none;
 }
-
-.fall-bg {
-    position: relative;
- }
- 
-.fall-bg:after {
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('assets/leaves1.svg'), url('assets/leaves2.svg');
-    pointer-events: none;
-    background-size: 500px, 400px;
-    animation: fall 20s linear infinite;
- }
-
- @keyframes fall {
-  0% {background-position: 0px 0px, 0px 0px;}
-  50% {background-position: -250px 500px, 150px 200px;}
-  100% {background-position: 0 1000px, 0 400px;}
- }
 
 @media screen and (max-width: 768px) {
     .header-menu {
