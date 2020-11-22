@@ -1,5 +1,5 @@
 'use strict';
-import { pageWidth } from 'main.js';
+import { pageWidth } from './main.js';
 console.log(pageWidth)
 // const router = document.getElementById('router');
 

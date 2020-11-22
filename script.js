@@ -12,5 +12,3 @@ for (let i = 0; i < 3; i++) {
   footerPanels[i].addEventListener('click', function () {
     footerContainers[i].classList.toggle('hidden')
 })};
-
-//======================Slider======================
