@@ -312,6 +312,7 @@ pageWidth.innerHTML =
 </div>`
 
 pageWidth.addEventListener('load', function() {
+    console.log('debug')
     multiItemSlider(pageWidth.getElementsByClassName('slider')[0], {
         isCycling: true
     });
