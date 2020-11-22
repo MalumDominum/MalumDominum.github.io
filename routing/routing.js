@@ -1,7 +1,8 @@
 'use strict';
 import { pageWidth } from './main.js';
-console.log(pageWidth)
-// const router = document.getElementById('router');
+const router = document.getElementById('router');
+
+router.appendChild(pageWidth);
 
 // function routeLogic(routeElement) {
 //     history.pushState(null, null, routeElement.dataset.route);
