@@ -3,7 +3,7 @@
 const router = document.getElementById('router');
 
 switch (window.location.hash) {
-  case 'product':
+  case '#product':
     console.log('product');
     break;
   default:
