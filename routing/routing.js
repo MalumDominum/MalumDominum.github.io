@@ -4,6 +4,7 @@ const router = document.getElementById('router');
 
 router.appendChild(pageWidth);
 
+pageWidth.trigger(CustomEvent("appended"));
 // function routeLogic(routeElement) {
 //     history.pushState(null, null, routeElement.dataset.route);
 //     OnRoute();
