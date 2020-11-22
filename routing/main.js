@@ -1,69 +1,4 @@
-const request = new Request(
-    "https://my-json-server.typicode.com/MalumDominum/MalumDominum.github.io/products");
-
-const pageWidth = document.createElement('div');
-pageWidth.classList.add("page-width");
-pageWidth.innerHTML =
-`<div class="slider">
-    <div class="slider-wrapper">
-        <a class="slider-item">
-        <div style="background: center url(slider-content/autumn-sales.jpg); background-size: cover;"></div>
-        </a>
-        <a class="slider-item">
-        <div style="background: center url(slider-content/halloween-sales.jpg); background-size: cover;"></div>
-        </a>
-        <a class="slider-item">
-        <div style="background: center url(slider-content/giveaway.jpg); background-size: cover;"></div>
-        </a>
-        <a class="slider-item">
-        <div style="background: center url(slider-content/black-friday.jpg); background-size: cover;"></div>
-        </a>
-    </div>
-    <a class="slider-control slider-control-left" href="#" role="button"></a>
-    <a class="slider-control slider-control-right" href="#" role="button"></a>
-</div>
-
-<div class="hit-goods">
-    <ul class="grid hit-goods-grid"></ul>
-</div>`
-
-var slider = multiItemSlider(pageWidth.getElementsByClassName('slider')[0], {
-    isCycling: true
-});
-
-fetch(request)
-.then(function(response) {
-  return response.blob();
-}).then(async function(blob) {
-  const products = JSON.parse(await blob.text());
-  let hitGoods = pageWidth.getElementsByClassName("hit-goods-grid")[0];
-  let goods = [];
-  let max = Math.floor(products.count);
-  for(let i = 0; i < 8; i++) {
-    //let randomProduct = products[Math.floor(Math.random() * max)];
-    goods.push(document.createElement("li"));
-    if (i < 6) { goods[i].classList.add("hit-goods-grid-container", "one-third"); }
-    else { goods[i].classList.add("hit-goods-grid-container", "one-half"); }
-    goods[i].innerHTML =
-   `<a class="hit-goods-grid-item" data-route="#product/${products[i].url}">
-      <div class="hit-goods-grid-item-image" style="background-image: url(${products[i].images[0]});"></div>
-      <div class="hit-goods-grid-item-text-container">
-        <h3 class="hit-goods-grid-item-title">${products[i].productName}</h3>
-      </div>
-    </a>`;
-    // goods[i].querySelector('[data-route]').addEventListener('click', function() {
-    //   routeLogic(this);
-    // });
-    hitGoods.appendChild(goods[i]);
-  }
-});
-
-export { pageWidth };
-
-//====================Slider-Logic======================
-
 var multiItemSlider = (function () {
-
     function _isElementVisible(element) {
       var rect = element.getBoundingClientRect(),
         vWidth = window.innerWidth || doc.documentElement.clientWidth,
@@ -344,3 +279,68 @@ var multiItemSlider = (function () {
       }
     }
   }());
+
+//====================End-Slider-Logic======================
+
+const request = new Request(
+    "https://my-json-server.typicode.com/MalumDominum/MalumDominum.github.io/products");
+
+const pageWidth = document.createElement('div');
+pageWidth.classList.add("page-width");
+pageWidth.innerHTML =
+`<div class="slider">
+    <div class="slider-wrapper">
+        <a class="slider-item">
+        <div style="background: center url(slider-content/autumn-sales.jpg); background-size: cover;"></div>
+        </a>
+        <a class="slider-item">
+        <div style="background: center url(slider-content/halloween-sales.jpg); background-size: cover;"></div>
+        </a>
+        <a class="slider-item">
+        <div style="background: center url(slider-content/giveaway.jpg); background-size: cover;"></div>
+        </a>
+        <a class="slider-item">
+        <div style="background: center url(slider-content/black-friday.jpg); background-size: cover;"></div>
+        </a>
+    </div>
+    <a class="slider-control slider-control-left" href="#" role="button"></a>
+    <a class="slider-control slider-control-right" href="#" role="button"></a>
+</div>
+
+<div class="hit-goods">
+    <ul class="grid hit-goods-grid"></ul>
+</div>`
+
+var slider = multiItemSlider(pageWidth.getElementsByClassName('slider')[0], {
+    isCycling: true
+});
+
+fetch(request)
+.then(function(response) {
+  return response.blob();
+}).then(async function(blob) {
+  const products = JSON.parse(await blob.text());
+  let hitGoods = pageWidth.getElementsByClassName("hit-goods-grid")[0];
+  let goods = [];
+  let max = Math.floor(products.count);
+  for(let i = 0; i < 8; i++) {
+    //let randomProduct = products[Math.floor(Math.random() * max)];
+    goods.push(document.createElement("li"));
+    if (i < 6) { goods[i].classList.add("hit-goods-grid-container", "one-third"); }
+    else { goods[i].classList.add("hit-goods-grid-container", "one-half"); }
+    goods[i].innerHTML =
+   `<a class="hit-goods-grid-item" data-route="#product/${products[i].url}">
+      <div class="hit-goods-grid-item-image" style="background-image: url(${products[i].images[0]});"></div>
+      <div class="hit-goods-grid-item-text-container">
+        <h3 class="hit-goods-grid-item-title">${products[i].productName}</h3>
+      </div>
+    </a>`;
+    // goods[i].querySelector('[data-route]').addEventListener('click', function() {
+    //   routeLogic(this);
+    // });
+    hitGoods.appendChild(goods[i]);
+  }
+});
+
+export { pageWidth };
+
