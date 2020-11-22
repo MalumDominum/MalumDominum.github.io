@@ -7,13 +7,11 @@ switch (window.location.hash) {
     console.log('product');
     break;
   default:
-    //import { pageWidth, appendEvents } from './main.js';
     import('./main.js')
     .then(module => {
-      console.log(module)
+      router.appendChild(module.pageWidth);
+      module.appendEvents();
     })
-    router.appendChild(pageWidth);
-    appendEvents();
     break;
 }
 // function routeLogic(routeElement) {
