@@ -140,6 +140,12 @@ a {
     line-height: 1.5;
 }
 
+.header-expanding-panel-image {
+    display: block;
+    height: 60px;
+    width: 60px
+}
+
 .header-expanding-panel-title-link {
     color: #E74B6A;
     margin-bottom: 10px;
