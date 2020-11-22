@@ -311,12 +311,12 @@ pageWidth.innerHTML =
     <ul class="grid hit-goods-grid"></ul>
 </div>`
 
-pageWidth.addEventListener('appended', function() {
-    console.log('debug')
+let appendEvents = function() {
+    console.log('debug');
     multiItemSlider(pageWidth.getElementsByClassName('slider')[0], {
         isCycling: true
     });
-})
+}
 
 fetch(request)
 .then(function(response) {
@@ -345,5 +345,5 @@ fetch(request)
   }
 });
 
-export { pageWidth };
+export { pageWidth, appendEvents };
 

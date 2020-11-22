@@ -1,10 +1,10 @@
 'use strict';
-import { pageWidth } from './main.js';
+import { pageWidth, appendEvents } from './main.js';
 const router = document.getElementById('router');
 
 router.appendChild(pageWidth);
 
-pageWidth.trigger(CustomEvent("appended"));
+appendEvents();
 // function routeLogic(routeElement) {
 //     history.pushState(null, null, routeElement.dataset.route);
 //     OnRoute();
