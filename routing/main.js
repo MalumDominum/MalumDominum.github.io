@@ -311,9 +311,11 @@ pageWidth.innerHTML =
     <ul class="grid hit-goods-grid"></ul>
 </div>`
 
-var slider = multiItemSlider(pageWidth.getElementsByClassName('slider')[0], {
-    isCycling: true
-});
+pageWidth.addEventListener('load', function() {
+    multiItemSlider(pageWidth.getElementsByClassName('slider')[0], {
+        isCycling: true
+    });
+})
 
 fetch(request)
 .then(function(response) {
