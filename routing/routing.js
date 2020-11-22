@@ -1,10 +1,17 @@
 'use strict';
-import { pageWidth, appendEvents } from './main.js';
+
 const router = document.getElementById('router');
 
-router.appendChild(pageWidth);
-
-appendEvents();
+switch (window.location.hash) {
+  case 'product':
+    console.log('product');
+    break;
+  default:
+    import { pageWidth, appendEvents } from './main.js';
+    router.appendChild(pageWidth);
+    appendEvents();
+    break;
+}
 // function routeLogic(routeElement) {
 //     history.pushState(null, null, routeElement.dataset.route);
 //     OnRoute();
