@@ -1,7 +1,7 @@
 const request = new Request(
     "https://my-json-server.typicode.com/MalumDominum/MalumDominum.github.io/products");
 
-const pageWidth = document.createElement(div);
+const pageWidth = document.createElement('div');
 pageWidth.classList.add("page-width");
 pageWidth.innerHTML =
 `<div class="slider">
