@@ -96,7 +96,7 @@ a {
 }
 
 .header-parent-link:hover > .header-link.discounts::after {
-    background: #D62433;
+    background: #FF293E;
 }
 
 .header-link-cart {
@@ -142,8 +142,19 @@ a {
 
 .header-expanding-panel-image {
     display: block;
-    height: 60px;
-    width: 60px
+    width: 175px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 100%;
+    background-position: center;
+    margin: 10px;
+    border-radius: 40px 0px 40px 0px;
+}
+
+.header-expanding-panel-image:hover {
+    border-right: 5px solid #B3101E;
+    border-left: 5px solid #B3101E;
 }
 
 .header-expanding-panel-title-link {
@@ -407,7 +418,7 @@ ul {
 }
 
 .footer-nav-col {
-    width: 33.3%;
+    width: 25%;
     min-width: 100px;
     margin-bottom: 20px;
 }
