@@ -1,3 +1,5 @@
+'use strict';
+
 var multiItemSlider = (function () {
     function _isElementVisible(element) {
       var rect = element.getBoundingClientRect(),

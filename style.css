@@ -429,6 +429,16 @@ ul {
     max-width: 100%;
 }
 
+.footer-nav-image {
+    position: relative;
+    background-size: contain;
+    top: -150px;
+    width: 250px;
+    height: 250px;
+    border-radius: 0px;
+    z-index: 9;
+}
+
 .footer-nav-container-mobile {
     width: max-content;
     max-width: 100%;
@@ -471,6 +481,16 @@ ul {
 
 .footer-nav-container-mobile.hidden {
     display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .footer-nav-image {
+        display: none;
+    }
+
+    .footer-nav-col {
+        width: 33.3%;
+    }
 }
 
 @media screen and (max-width: 768px) {
