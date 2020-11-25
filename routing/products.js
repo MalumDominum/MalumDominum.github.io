@@ -13,23 +13,24 @@ fetch(productsRequest)
         return response.blob();
     }).then(async function(blob) {
         const categories = JSON.parse(await blob.text());
-    })
-    let currentCategory = 
-        [[products, categories].reduce((p, c) => 
-        (c.forEach(o => m.has(o.id) &&
-        Object.assign(p.get(o.id), {"categoryUrl": o.url}) || 
-        p.set(o.CategoryId, o)), p), new Map).values()];
-    console.log(currentCategory);
-    let currentSubCategory = [[products, categories].reduce((m, a) => 
-        (a.forEach(o => m.has(o.CategoryId) &&
-        Object.assign(m.get(o.CategoryId), o) || 
-        m.set(o.CategoryId, o)), m), new Map).values()];
-    products.array.forEach(element => {
-        // if (element.categoryId == window.location.hash) 
+        products.forEach(p => {
+            categories.forEach(c => {
+                if (p.categoryId === c.id) {
+                    p.categoryUrl = c.url;
+                    c.subCategories.forEach(s => { 
+                        if (p.subCategoryId === s.id) p.subCategoryUrl = s.url; 
+                    });
+                };
+            });
+        });
+        console.log(products);
+        // products.array.forEach(element => {
+        // if (element.categoryId === window.location.hash) 
         //     let categoryId = element.categoryId
+        //})
     });
     // products.array.forEach(element => {
-    //     if (element.url == getHashDetails()[3]) 
+    //     if (element.url === getHashDetails()[3]) 
 
     // });
 });

@@ -2,22 +2,23 @@
 
 const router = document.getElementById('router');
 
-function getHashDetails() {
-  let splitedHash = window.location.hash.replace('#', '').split('/', 2);
-  switch (splitedHash.length) {
-      case 1: return [ splitedHash[0] ];  //cart
+function getPathDetails() {
+  let splitedPath = window.location.pathname.split('/');
+  splitedPath.shift();
+  switch (splitedPath.length) {
+      case 1: return [ splitedPath[0] ];  //cart
 
-      case 2: return [ splitedHash[0],    //categories | products
-                       splitedHash[1] ];
+      case 2: return [ splitedPath[0],    //categories | products
+                       splitedPath[1] ];
 
-      case 4: return [ splitedHash[2],    // products
-                       splitedHash[3],    // product name
-                       splitedHash[1] ];  // category
+      case 4: return [ splitedPath[2],    // products
+                       splitedPath[3],    // product name
+                       splitedPath[1] ];  // category
   }
 }
 
 function routePage() {
-  switch (getHashDetails()[0]) {
+  switch (getPathDetails()[0]) {
     case 'categories':
       import('./categories.js');
       break;
@@ -36,7 +37,7 @@ function routePage() {
       break;
   }
 }
-
+window.onpopstate = routePage();
 routePage();
 
 
