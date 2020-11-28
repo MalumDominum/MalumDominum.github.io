@@ -339,9 +339,17 @@ fetch(request)
         <h3 class="hit-goods-grid-item-title">${products[i].productName}</h3>
       </div>
     </a>`;
-    // goods[i].querySelector('[data-route]').addEventListener('click', function() {
-    //   routeLogic(this);
-    // });
+    goods[i].querySelector('[data-route]').addEventListener('click', function(e) {
+      // routeLogic(this);
+    });
+
+    goods[i].querySelector('[data-route]').onmouseup = function(e) {
+      var e = e || window.event;
+      var btnCode = e.button;
+      if (btnCode === 1)
+       console.log('Middle button');
+    }
+
     hitGoods.appendChild(goods[i]);
   }
 });

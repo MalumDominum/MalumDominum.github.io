@@ -118,6 +118,7 @@
     ["literature/artbook/alice-madness-returns.jpg"],
     "categoryId": 1,
     "subCategoryId": 3,
+    "sale": 50,
     "inStock": true,
     "recommended": false
   },
@@ -131,7 +132,7 @@
     ["literature/ranobe/re-zero-life-from-scratch-in-an-alternate-world.jpg"],
     "categoryId": 1,
     "subCategoryId": 4,
-    "inStock": true,
+    "inStock": false,
     "recommended": false
   },
   {
@@ -144,6 +145,7 @@
     ["literature/comics/adventure-time-of-marceline-and-the-scream-queen.jpg"],
     "categoryId": 1,
     "subCategoryId": 2,
+    "sale": 35,
     "inStock": true,
     "recommended": false
   }
