@@ -25,7 +25,7 @@ function routePage() {
     case 'products':
       import('./products.js')
       .then(module => {
-        router.appendChild(module.pathElement);
+        router.appendChild(module.pageWidth);
       })
       break;
     case 'cart':
@@ -40,7 +40,7 @@ function routePage() {
       break;
   }
 }
-window.onpopstate = routePage();
+window.onpopstate = routePage;
 routePage();
 
 // function OnRoute() {

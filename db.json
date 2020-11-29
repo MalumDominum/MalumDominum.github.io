@@ -1,8 +1,8 @@
 {"products": [
   {
     "url": "alphonse-elric",
-    "productName": "Альфонс Элрик - Fullmetal Alchimist",
-    "productDescription": "",
+    "name": "Альфонс Элрик - Fullmetal Alchimist",
+    "description": "",
     "price": 155.05,
     "images": ["figures/alphons-fa.jpg"],
     "categoryId": 5,
@@ -10,8 +10,8 @@
   },
   {
     "url": "geos",
-    "productName": "Геос - One Punch Man",
-    "productDescription": "",
+    "name": "Геос - One Punch Man",
+    "description": "",
     "price": 155.05,
     "images": ["figures/geos-opm.jpg"],
     "categoryId": 5,
@@ -19,8 +19,8 @@
   },
   {
     "url": "black-rock-shooter",
-    "productName": "Black★Rock Shooter",
-    "productDescription": "",
+    "name": "Black★Rock Shooter",
+    "description": "",
     "price": 155.05,
     "images": ["figures/black-rock-shooter3.jpg"],
     "categoryId": 5,
@@ -28,8 +28,8 @@
   },
   {
     "url": "leafa",
-    "productName": "Лифа - Sword Art Online",
-    "productDescription": "",
+    "name": "Лифа - Sword Art Online",
+    "description": "",
     "price": 155.05,
     "images": ["figures/leafa-sao.jpeg"],
     "categoryId": 5,
@@ -37,8 +37,8 @@
   },
   {
     "url": "kagame-rin",
-    "productName": "Кагамэ Рин - Vocaloid Series 02",
-    "productDescription": "",
+    "name": "Кагамэ Рин - Vocaloid Series 02",
+    "description": "",
     "price": 155.05,
     "images": ["figures/vocaloid.jpg"],
     "categoryId": 5,
@@ -46,8 +46,8 @@
   },
   {
     "url": "touka-kirishima",
-    "productName": "Тоука Киришима - Tokio Ghoul",
-    "productDescription": "",
+    "name": "Тоука Киришима - Tokio Ghoul",
+    "description": "",
     "price": 155.05,
     "images": ["figures/touka-kirishima.jpg"],
     "categoryId": 5,
@@ -55,8 +55,8 @@
   },
   {
     "url": "rem",
-    "productName": "Рем - Re:Zero",
-    "productDescription": "",
+    "name": "Рем - Re:Zero",
+    "description": "",
     "price": 155.05,
     "images": ["figures/rem-re-zero.jpg"],
     "categoryId": 5,
@@ -64,8 +64,8 @@
   },
   {
     "url": "miuki-rena-ryugu",
-    "productName": "Миюки Рена Рюгу - Когда плачут цикады",
-    "productDescription": "",
+    "name": "Миюки Рена Рюгу - Когда плачут цикады",
+    "description": "",
     "price": 155.05,
     "images": ["figures/miyuki-rena-ryugu-when-they-cry-gou.jpg"],
     "categoryId": 5,
@@ -73,8 +73,8 @@
   },
   {
     "url": "drill-necklace",
-    "productName": "Ожерелье с буром - Gurren Laggan",
-    "productDescription": "",
+    "name": "Ожерелье с буром - Gurren Laggan",
+    "description": "",
     "price": 155.05,
     "images": ["path/to/cdn.jpg"],
     "categoryId": 3,
@@ -82,8 +82,8 @@
   },
   {
     "url": "taiga",
-    "productName": "Дакимакура Тайги - Doradora",
-    "productDescription": "",
+    "name": "Дакимакура Тайги - Doradora",
+    "description": "",
     "price": 155.05,
     "images": ["path/to/cdn.jpg"],
     "categoryId": 4,
@@ -92,9 +92,9 @@
   },
   {
     "url": "art-of-mass-effect-andromeda",
-    "productName": "Артбук «Art Of Mass Effect Andromeda»",
-    "productCode": "ART60",
-    "productDescription": "Издатель: Dark Horse\nХудожник: BioWare\nКоличество страниц: 88\nЦвета: Все\n\nBioWare Отмеченная наградами серия Mass Effect покорила сердца и души геймеров своими запоминающимися персонажами, потрясающими визуальными эффектами и интуитивными боями! Теперь вселенная Mass Effect расширяется за счет игры Dark Horse The Art of Mass Effect: Andromeda, в которой представлены эксклюзивные изображения персонажей, арсенал, локации, транспортные средства и многое другое из новой игры!",
+    "name": "Артбук «Art Of Mass Effect Andromeda»",
+    "code": "ART60",
+    "description": "Издатель: Dark Horse\nХудожник: BioWare\nКоличество страниц: 88\nЦвета: Все\n\nBioWare Отмеченная наградами серия Mass Effect покорила сердца и души геймеров своими запоминающимися персонажами, потрясающими визуальными эффектами и интуитивными боями! Теперь вселенная Mass Effect расширяется за счет игры Dark Horse The Art of Mass Effect: Andromeda, в которой представлены эксклюзивные изображения персонажей, арсенал, локации, транспортные средства и многое другое из новой игры!",
     "price": 1660.00,
     "images": 
     ["literature/artbook/mass-effect-andromeda.jpg",
@@ -110,9 +110,9 @@
   },
   {
     "url": "art-of-alice-madness-returns",
-    "productName": "Артбук «Art Of Alice Madness Returns»",
-    "productCode": "ART36",
-    "productDescription": "Издатель: Dark Horse\nСценарист: American McGee\nКоличество страниц: 184\nЦвета: Все\n\nЛегендарный гейм-дизайнер Американ МакГи создал одну из самых привлекательных игр всех времен в Alice. Одиннадцать лет спустя МакГи возвращается с продолжением, столь же революционным, как и его признанная критиками классическая игра Alice: Madness Returns! Как раз к Madness Returns, студии Dark Horse и Spicy Horse приглашают поклонников Алисы в путешествие по стране чудес воображения американца МакГи, чтобы увидеть беспрецедентный взгляд на создание этого великолепного и тревожного мира. В предисловии МакГи «Искусство Алисы» предлагает интимный взгляд на потрясающие и устрашающие произведения искусства, стоящие за этим блокбастером, переосмыслением непреходящего шедевра Льюиса Кэрролла!",
+    "name": "Артбук «Art Of Alice Madness Returns»",
+    "code": "ART36",
+    "description": "Издатель: Dark Horse\nСценарист: American McGee\nКоличество страниц: 184\nЦвета: Все\n\nЛегендарный гейм-дизайнер Американ МакГи создал одну из самых привлекательных игр всех времен в Alice. Одиннадцать лет спустя МакГи возвращается с продолжением, столь же революционным, как и его признанная критиками классическая игра Alice: Madness Returns! Как раз к Madness Returns, студии Dark Horse и Spicy Horse приглашают поклонников Алисы в путешествие по стране чудес воображения американца МакГи, чтобы увидеть беспрецедентный взгляд на создание этого великолепного и тревожного мира. В предисловии МакГи «Искусство Алисы» предлагает интимный взгляд на потрясающие и устрашающие произведения искусства, стоящие за этим блокбастером, переосмыслением непреходящего шедевра Льюиса Кэрролла!",
     "price": 1790.00,
     "images": 
     ["literature/artbook/alice-madness-returns.jpg"],
@@ -124,9 +124,9 @@
   },
   {
     "url": "ranobe-re-zero-life-from-scratch-in-an-alternate-world-tom-6",
-    "productName": "Ранобэ «Re:Zero. Жизнь с нуля в альтернативном мире» том 6",
-    "productCode": "RNB134",
-    "productDescription": "",
+    "name": "Ранобэ «Re:Zero. Жизнь с нуля в альтернативном мире» том 6",
+    "code": "RNB134",
+    "description": "",
     "price": 480.00,
     "images": 
     ["literature/ranobe/re-zero-life-from-scratch-in-an-alternate-world.jpg"],
@@ -137,9 +137,9 @@
   },
   {
     "url": "comic-adventure-time-of-marceline-and-the-scream-queen",
-    "productName": "Комикс «Время приключений Марселин и Королевы Крика»",
-    "productCode": "CMX75",
-    "productDescription": "",
+    "name": "Комикс «Время приключений Марселин и Королевы Крика»",
+    "code": "CMX75",
+    "description": "",
     "price": 120.00,
     "images": 
     ["literature/comics/adventure-time-of-marceline-and-the-scream-queen.jpg"],

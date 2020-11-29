@@ -37,6 +37,11 @@ a {
     align-items: center;
 }
 
+.header-logos-container {
+    display: flex;
+    align-items: center;
+}
+
 .header-logo {
     width: 60px;
     height: 60px;
@@ -331,11 +336,6 @@ ul {
     margin: 5px;
 }
 
-.lazyloaded {
-    opacity: 1;
-    transition: opacity 0.15s ease-in-out;
-}
-
 .hit-goods-grid-item-text-container {
     position: absolute;
     bottom: 0;
@@ -359,18 +359,18 @@ ul {
 /*******************Products*******************/
 
 .path {
-    padding: 0 15px;
+    margin-left: 78px;
 }
 
 .path-link {
     font-size: 14px;
     font-weight: 600;
     padding-right: 2px;
-    transition: all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .path-link:hover {
-    text-shadow: rgba(0, 0, 0, .15) 3px 3px 3px;
+    text-shadow: rgba(0, 0, 0, .15) 2px 2px 2px;
 }
 
 .icon-chevron-right {
@@ -379,7 +379,7 @@ ul {
     vertical-align: middle;
 }
 
-.products {
+.product-section {
     display: flex;
     margin: 10px auto;
 }
@@ -479,11 +479,11 @@ ul {
 }
 
 .quantity.plus {
-    background-image: url(assets/minus.svg);
+    background-image: url(assets/plus.svg);
 }
 
 .quantity.minus {
-    background-image: url(assets/plus.svg);
+    background-image: url(assets/minus.svg);
 }
 
 .quantity-input {
@@ -494,6 +494,12 @@ ul {
     font-size: 2em;
     text-align: center;
     text-shadow: rgba(0, 0, 0, .2) 2px 2px 2px;
+}
+
+.quantity-input:focus {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.5); 
+    box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.3);
 }
 
 .in-stock, .not-in-stock {
@@ -535,6 +541,16 @@ ul {
 .add-to-cart-button:hover{
     background-color: #000;
     color: #fff;
+}
+
+.product-code {
+    color: #74030c;
+    font-size: 1.7em;
+    margin: 10px 0;
+}
+
+.product-description {
+    margin-top: 0;
 }
 /*===================banner===================*/
 
@@ -670,6 +686,12 @@ ul {
     display: none;
 }
 
+@media screen and (max-width: 868px) {
+    .header-text-logo {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .footer-nav-image {
         display: none;
@@ -683,6 +705,10 @@ ul {
 @media screen and (max-width: 768px) {
     .header {
         justify-content: space-between;
+    }
+
+    .header-text-logo {
+        display: block;
     }
 
     .header-menu {
@@ -711,7 +737,15 @@ ul {
         width: 100%;
     }
 
-    .products {
+    .path {
+        margin-left: 0;
+    }
+
+    .path-link {
+        font-size: 12px;
+    }
+
+    .product-section {
         flex-direction: column;
     }
 

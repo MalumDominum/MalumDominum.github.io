@@ -336,7 +336,7 @@ fetch(request)
    `<a class="hit-goods-grid-item" data-route="#product/${products[i].url}">
       <div class="hit-goods-grid-item-image" style="background-image: url(${products[i].images[0]});"></div>
       <div class="hit-goods-grid-item-text-container">
-        <h3 class="hit-goods-grid-item-title">${products[i].productName}</h3>
+        <h3 class="hit-goods-grid-item-title">${products[i].name}</h3>
       </div>
     </a>`;
     goods[i].querySelector('[data-route]').addEventListener('click', function(e) {
