@@ -358,10 +358,6 @@ ul {
 
 /*******************Products*******************/
 
-.path {
-    margin-left: 78px;
-}
-
 .path-link {
     font-size: 14px;
     font-weight: 600;
@@ -387,7 +383,6 @@ ul {
 .vertical-photos-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     margin-right: 12px;
 }
 
@@ -417,9 +412,10 @@ ul {
 
 .full-product-photo {
     background-size: contain;
-    margin: 0 auto;
+    margin: 6px 10px 0 0;
     max-width: 50%;
-    height: auto;
+    object-fit: contain;
+    object-position: top;
 }
 
 .product-description-container {
@@ -427,7 +423,7 @@ ul {
 }
 
 .sale-label{
-    margin: 10px 0 0 0;
+    margin: 6px 0 0 0;
     font-family: "Nutmeg","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 18px;
     font-weight: 700;

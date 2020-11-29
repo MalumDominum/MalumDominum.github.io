@@ -1,21 +1,7 @@
 'use strict';
+import { getHashDetails } from "./processor.js";
 
 const router = document.getElementById('router');
-
-let getHashDetails = function() {
-  let splitedHash = window.location.hash.replace('#', '').split('/');
-  switch (splitedHash.length) {
-      case 1: return [ splitedHash[0] ];  //cart
-
-      case 2: return [ splitedHash[0],    //categories | products
-                       splitedHash[1] ];
-
-      case 4: return [ splitedHash[2],    // products
-                       splitedHash[3],    // product name
-                       splitedHash[1] ];  // category
-  }
-}
-export { getHashDetails } 
 
 function routePage() {
   switch (getHashDetails()[0]) {
@@ -25,7 +11,9 @@ function routePage() {
     case 'products':
       import('./products.js')
       .then(module => {
+        console.log(module.pageWidth);
         router.appendChild(module.pageWidth);
+        initiateRoutes(module.pageWidth);
       })
       break;
     case 'cart':
@@ -34,30 +22,40 @@ function routePage() {
     default:
       import('./main.js')
       .then(module => {
+        console.log(module.pageWidth);
         router.appendChild(module.pageWidth);
-        module.appendEvents();
+        module.appendEvents().then(function() {
+          initiateRoutes(module.pageWidth);
+        });
       })
       break;
   }
 }
-window.onpopstate = routePage;
+initiateRoutes(document);
+//window.onpopstate = onRoute;
 routePage();
 
-// function OnRoute() {
-//   router.innerHTML = "";
-//   routePage();
+function onRoute() {
+  router.innerHTML = "";
+  window.scrollTo(0, 0);
+  routePage();
+}
+
+function routeLogic(routeElement) {
+  history.pushState(null, null, routeElement.dataset.route ? routeElement.dataset.route : '/');
+  onRoute();
+};
+
+// goods[i].querySelector('[data-route]').onmouseup = function(e) {
+//   var e = e || window.event;
+//   var btnCode = e.button;
+//   if (btnCode === 1)
+//    console.log('Middle button');
 // }
 
-// function routeLogic(routeElement) {
-//     history.pushState(null, null, routeElement.dataset.route);
-//     OnRoute();
-// };
-
-// function initiateRoutes() {
-//   let routeElements = document.querySelectorAll('[data-route]');
-//   routeElements.forEach(function(routeElement) {
-//     routeElement.addEventListener('click', routeLogic(routeElement))
-//   });
-// };
-
-// initiateRoutes();
+function initiateRoutes(element) {
+  let routeElements = element.querySelectorAll('[data-route]');
+  routeElements.forEach(function(routeElement) {
+    routeElement.addEventListener('click', function() { routeLogic(routeElement); })
+  });
+};

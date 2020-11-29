@@ -287,6 +287,8 @@ var multiItemSlider = (function () {
 const request = new Request(
     "https://my-json-server.typicode.com/MalumDominum/MalumDominum.github.io/products");
 
+import { getProducts } from "./processor.js";
+
 const pageWidth = document.createElement('div');
 pageWidth.classList.add("page-width");
 pageWidth.innerHTML =
@@ -313,46 +315,51 @@ pageWidth.innerHTML =
     <ul class="grid hit-goods-grid"></ul>
 </div>`
 
-let appendEvents = function() {
-    multiItemSlider(pageWidth.getElementsByClassName('slider')[0], {
-        isCycling: true
-    });
+function getRandom(arr, n) {
+  var result = new Array(n),
+      len = arr.length,
+      taken = new Array(len);
+  while (n--) {
+      var x = Math.floor(Math.random() * len);
+      result[n] = arr[x in taken ? taken[x] : x];
+      taken[x] = --len in taken ? taken[len] : len;
+  }
+  return result;
 }
 
-fetch(request)
-.then(function(response) {
-  return response.blob();
-}).then(async function(blob) {
-  const products = JSON.parse(await blob.text());
-  let hitGoods = pageWidth.getElementsByClassName("hit-goods-grid")[0];
-  let goods = [];
-  let max = Math.floor(products.count);
-  for(let i = 0; i < 8; i++) {
-    //let randomProduct = products[Math.floor(Math.random() * max)];
-    goods.push(document.createElement("li"));
-    if (i < 6) { goods[i].classList.add("hit-goods-grid-container", "one-third"); }
-    else { goods[i].classList.add("hit-goods-grid-container", "one-half"); }
-    goods[i].innerHTML =
-   `<a class="hit-goods-grid-item" data-route="#product/${products[i].url}">
-      <div class="hit-goods-grid-item-image" style="background-image: url(product-photos/figures/original/${products[i].images[0]});"></div>
-      <div class="hit-goods-grid-item-text-container">
-        <h3 class="hit-goods-grid-item-title">${products[i].name}</h3>
-      </div>
-    </a>`;
-    goods[i].querySelector('[data-route]').addEventListener('click', function(e) {
-      // routeLogic(this);
-    });
+let appendEvents = async function() {
+  multiItemSlider(pageWidth.getElementsByClassName('slider')[0], {
+      isCycling: true
+  });
+  
+  await getProducts().then(function(products) {
+    let recommendedProducts = products.map(function(product) {
+      if (product.recommended) return product;
+    })
+    
+    let hitGoods = pageWidth.getElementsByClassName("hit-goods-grid")[0];
+    let goods = [];
+    // Shuffle array
+    recommendedProducts = recommendedProducts.sort(() => 0.5 - Math.random());
 
-    goods[i].querySelector('[data-route]').onmouseup = function(e) {
-      var e = e || window.event;
-      var btnCode = e.button;
-      if (btnCode === 1)
-       console.log('Middle button');
+    // Get sub-array of first n elements after shuffled
+    recommendedProducts = recommendedProducts.slice(0, 8);
+    for (let i = 0; i < 8; i++) {
+      goods.push(document.createElement("li"));
+      if (i < 6) { goods[i].classList.add("hit-goods-grid-container", "one-third"); }
+      else { goods[i].classList.add("hit-goods-grid-container", "one-half"); }
+      goods[i].innerHTML =
+     `<a class="hit-goods-grid-item" data-route="#categories/${recommendedProducts[i].subCategoryUrl}/products/${recommendedProducts[i].url}">
+        <div class="hit-goods-grid-item-image" style="background-image: url(product-photos/${recommendedProducts[i].categoryUrl}/${recommendedProducts[i].subCategoryUrl}/${recommendedProducts[i].images[0]});"></div>
+        <div class="hit-goods-grid-item-text-container">
+          <h3 class="hit-goods-grid-item-title">${recommendedProducts[i].name}</h3>
+        </div>
+      </a>`;
+
+      hitGoods.appendChild(goods[i]);
     }
-
-    hitGoods.appendChild(goods[i]);
-  }
-});
+  });
+}
 
 export { pageWidth, appendEvents };
 
