@@ -4,8 +4,11 @@
     "name": "Альфонс Элрик - Fullmetal Alchimist",
     "description": "",
     "price": 155.05,
-    "images": ["figures/alphons-fa.jpg"],
+    "images": ["alphons-fa.jpg"],
     "categoryId": 5,
+    "subCategoryId": 1,
+    "sale": 35,
+    "inStock": true,
     "recommended": true
   },
   {
@@ -13,8 +16,11 @@
     "name": "Геос - One Punch Man",
     "description": "",
     "price": 155.05,
-    "images": ["figures/geos-opm.jpg"],
+    "images": ["geos-opm.jpg"],
     "categoryId": 5,
+    "subCategoryId": 1,
+    "sale": 35,
+    "inStock": true,
     "recommended": true
   },
   {
@@ -22,8 +28,11 @@
     "name": "Black★Rock Shooter",
     "description": "",
     "price": 155.05,
-    "images": ["figures/black-rock-shooter3.jpg"],
+    "images": ["black-rock-shooter3.jpg"],
     "categoryId": 5,
+    "subCategoryId": 1,
+    "sale": 35,
+    "inStock": true,
     "recommended": true
   },
   {
@@ -31,8 +40,11 @@
     "name": "Лифа - Sword Art Online",
     "description": "",
     "price": 155.05,
-    "images": ["figures/leafa-sao.jpeg"],
+    "images": ["leafa-sao.jpeg"],
     "categoryId": 5,
+    "subCategoryId": 1,
+    "sale": 35,
+    "inStock": true,
     "recommended": true
   },
   {
@@ -40,8 +52,11 @@
     "name": "Кагамэ Рин - Vocaloid Series 02",
     "description": "",
     "price": 155.05,
-    "images": ["figures/vocaloid.jpg"],
+    "images": ["vocaloid.jpg"],
     "categoryId": 5,
+    "subCategoryId": 1,
+    "sale": 35,
+    "inStock": true,
     "recommended": true
   },
   {
@@ -49,8 +64,11 @@
     "name": "Тоука Киришима - Tokio Ghoul",
     "description": "",
     "price": 155.05,
-    "images": ["figures/touka-kirishima.jpg"],
+    "images": ["touka-kirishima.jpg"],
     "categoryId": 5,
+    "subCategoryId": 1,
+    "sale": 35,
+    "inStock": true,
     "recommended": true
   },
   {
@@ -58,8 +76,11 @@
     "name": "Рем - Re:Zero",
     "description": "",
     "price": 155.05,
-    "images": ["figures/rem-re-zero.jpg"],
+    "images": ["rem-re-zero.jpg"],
     "categoryId": 5,
+    "subCategoryId": 1,
+    "sale": 35,
+    "inStock": true,
     "recommended": true
   },
   {
@@ -67,17 +88,23 @@
     "name": "Миюки Рена Рюгу - Когда плачут цикады",
     "description": "",
     "price": 155.05,
-    "images": ["figures/miyuki-rena-ryugu-when-they-cry-gou.jpg"],
+    "images": ["miyuki-rena-ryugu-when-they-cry-gou.jpg"],
     "categoryId": 5,
+    "subCategoryId": 1,
+    "sale": 35,
+    "inStock": true,
     "recommended": true
   },
   {
     "url": "drill-necklace",
-    "name": "Ожерелье с буром - Gurren Laggan",
+    "name": "Ожерелье с буром - Gurren Lagann",
     "description": "",
     "price": 155.05,
-    "images": ["path/to/cdn.jpg"],
+    "images": ["drill-gurren-lagann.jpg"],
     "categoryId": 3,
+    "subCategoryId": 1,
+    "sale": 35,
+    "inStock": true,
     "recommended": false
   },
   {
@@ -85,7 +112,7 @@
     "name": "Дакимакура Тайги - Doradora",
     "description": "",
     "price": 155.05,
-    "images": ["path/to/cdn.jpg"],
+    "images": ["aisaka-taiga-toradora.jpg"],
     "categoryId": 4,
     "subCategoryId": 4,
     "recommended": false
@@ -97,12 +124,12 @@
     "description": "Издатель: Dark Horse\nХудожник: BioWare\nКоличество страниц: 88\nЦвета: Все\n\nBioWare Отмеченная наградами серия Mass Effect покорила сердца и души геймеров своими запоминающимися персонажами, потрясающими визуальными эффектами и интуитивными боями! Теперь вселенная Mass Effect расширяется за счет игры Dark Horse The Art of Mass Effect: Andromeda, в которой представлены эксклюзивные изображения персонажей, арсенал, локации, транспортные средства и многое другое из новой игры!",
     "price": 1660.00,
     "images": 
-    ["literature/artbook/mass-effect-andromeda.jpg",
-      "literature/artbook/mass-effect-andromeda-cora.jpg",
-      "literature/artbook/mass-effect-andromeda-foreword.jpg",
-      "literature/artbook/mass-effect-andromeda-nakmor.jpg",
-      "literature/artbook/mass-effect-andromeda-rooms.jpg",
-      "literature/artbook/mass-effect-andromeda-space.jpg"],
+    ["mass-effect-andromeda.jpg",
+     "mass-effect-andromeda-cora.jpg",
+     "mass-effect-andromeda-foreword.jpg",
+     "mass-effect-andromeda-nakmor.jpg",
+     "mass-effect-andromeda-rooms.jpg",
+     "mass-effect-andromeda-space.jpg"],
     "categoryId": 1,
     "subCategoryId": 3,
     "inStock": true,
@@ -115,7 +142,7 @@
     "description": "Издатель: Dark Horse\nСценарист: American McGee\nКоличество страниц: 184\nЦвета: Все\n\nЛегендарный гейм-дизайнер Американ МакГи создал одну из самых привлекательных игр всех времен в Alice. Одиннадцать лет спустя МакГи возвращается с продолжением, столь же революционным, как и его признанная критиками классическая игра Alice: Madness Returns! Как раз к Madness Returns, студии Dark Horse и Spicy Horse приглашают поклонников Алисы в путешествие по стране чудес воображения американца МакГи, чтобы увидеть беспрецедентный взгляд на создание этого великолепного и тревожного мира. В предисловии МакГи «Искусство Алисы» предлагает интимный взгляд на потрясающие и устрашающие произведения искусства, стоящие за этим блокбастером, переосмыслением непреходящего шедевра Льюиса Кэрролла!",
     "price": 1790.00,
     "images": 
-    ["literature/artbook/alice-madness-returns.jpg"],
+    ["alice-madness-returns.jpg"],
     "categoryId": 1,
     "subCategoryId": 3,
     "sale": 50,
@@ -129,7 +156,7 @@
     "description": "",
     "price": 480.00,
     "images": 
-    ["literature/ranobe/re-zero-life-from-scratch-in-an-alternate-world.jpg"],
+    ["re-zero-life-from-scratch-in-an-alternate-world.jpg"],
     "categoryId": 1,
     "subCategoryId": 4,
     "inStock": false,
@@ -142,7 +169,7 @@
     "description": "",
     "price": 120.00,
     "images": 
-    ["literature/comics/adventure-time-of-marceline-and-the-scream-queen.jpg"],
+    ["adventure-time-of-marceline-and-the-scream-queen.jpg"],
     "categoryId": 1,
     "subCategoryId": 2,
     "sale": 35,

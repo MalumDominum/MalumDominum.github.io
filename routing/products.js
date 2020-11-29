@@ -67,10 +67,10 @@ fetch(productsRequest)
         productSection.innerHTML =
         `<div class="vertical-photos-container">
             ${product.images.map( (image) =>
-                `<a class="product-photo" style="background-image: url(${image});"></a>`
+                `<a class="product-photo" style="background-image: url(product-photos/${product.categoryName}/${product.subCategoryName}/${product.image});"></a>`
             )}
         </div>
-        <img src="${product.images[0]}" alt="${product.name}" class="full-product-photo">
+        <img src="product-photos/${product.categoryName}/${product.subCategoryName}/${product.images[0]}" alt="${product.name}" class="full-product-photo">
         <div class="product-description-container">
             ${product.sale ? `<p class="sale-label">Скидка ${product.sale}%</p>` : ``}
             <h1 class="product-title">${product.name}</h1>
@@ -87,10 +87,10 @@ fetch(productsRequest)
             <button class="add-to-cart-button">В корзину</button>
             <p class="product-code">Код: ${product.code}</p>
             <p class="product-description">
-                
+                ${product.description.replace(/(?:\r\n|\r|\n)/g, '<br>')}
             </p>
         </div>`
-// ${product.description.map((char) => char != '\n' ? char : `<br/>`)}
+// 
         const productPhotos = productSection.querySelectorAll(".product-photo");
         for (let i = 0; i < productPhotos.length; i++) {
             productPhotos[i].addEventListener('click', function() {
