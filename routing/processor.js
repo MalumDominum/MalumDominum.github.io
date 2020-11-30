@@ -1,7 +1,7 @@
 'use strict';
 const dbUrl = "https://my-json-server.typicode.com/MalumDominum/MalumDominum.github.io";
 const productsRequest = new Request(dbUrl + "/products");
-const categoriesRequest = new Request(dbUrl + "/categories")
+const categoriesRequest = new Request(dbUrl + "/categories");
 
 let getHashDetails = function() {
     let splitedHash = window.location.hash.replace('#', '').split('/');
@@ -14,7 +14,7 @@ let getHashDetails = function() {
         case 4: return [ splitedHash[2],    // products
                          splitedHash[3],    // product name
                          splitedHash[1] ];  // category
-                         
+
         default: return [''];
     }
 };

@@ -1,6 +1,5 @@
 {"products": [
   {
-    "id": "alphonse-elric",
     "url": "alphonse-elric",
     "name": "Альфонс Элрик - Fullmetal Alchimist",
     "description": "",
@@ -13,7 +12,6 @@
     "recommended": true
   },
   {
-    "id": "geos",
     "url": "geos",
     "name": "Геос - One Punch Man",
     "description": "",

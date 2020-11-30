@@ -28,13 +28,13 @@ getProducts().then(function(products) {
     pathElement.classList.add("path");
     pathElement.innerHTML = 
     `<a class="path-link" data-route="">Главная страница</a>
-    <span><svg class="icon icon-chevron-right" viewBox="0 0 478.448 478.448">
+    <svg class="arrow-right" viewBox="0 0 478.448 478.448">
         <path fill="#010002" d="M131.659 0l-31.165 32.035 213.31 207.197-213.31 207.141 31.156 32.075 246.304-239.216z"></path>
-    </svg></span>
+    </svg>
     <a class="path-link" data-route="#categories/${product.categoryUrl}">${product.categoryName}</a>
-    <span><svg class="icon icon-chevron-right" viewBox="0 0 478.448 478.448">
+    <svg class="arrow-right" viewBox="0 0 478.448 478.448">
         <path fill="#010002" d="M131.659 0l-31.165 32.035 213.31 207.197-213.31 207.141 31.156 32.075 246.304-239.216z"></path>
-    </svg></span>
+    </svg>
     <a class="path-link" data-route="#categories/${product.subCategoryUrl}">${product.subCategoryName}</a>`
 
     const productSection = document.createElement('div');
@@ -49,9 +49,9 @@ getProducts().then(function(products) {
     <div class="product-description-container">
         ${product.sale ? `<p class="sale-label">Скидка ${product.sale}%</p>` : ``}
         <h1 class="product-title">${product.name}</h1>
-        ${product.sale ? `<p class="product-price crossed-out">${product.price} грн</p>
-                            <p class="product-price discounted">${(product.price * product.sale / 100).toFixed(2)} грн</p>` 
-                        : `<p class="product-price">${product.price} грн</p>`}
+        ${product.sale ? `<p class="product-price crossed-out">${(product.price).toFixed(2)} грн</p>
+                            <p class="product-price discounted">${(product.price * (100 - product.sale) / 100).toFixed(2)} грн</p>` 
+                        : `<p class="product-price">${(product.price).toFixed(2)} грн</p>`}
         ${product.inStock ? `<div class="in-stock">В наличии</div>` 
                             : `<div class="not-in-stock">Нет в наличии</div>`}
         <div class="product-quantity-container">
