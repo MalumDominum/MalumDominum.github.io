@@ -1,5 +1,5 @@
 'use strict';
-import { getHashDetails } from "./processor.js";
+import { getHashDetails, cleanElement } from "./processor.js";
 
 const router = document.getElementById('router');
 
@@ -11,9 +11,9 @@ function routePage() {
     case 'products':
       import('./products.js')
       .then(module => {
-        console.log(module.pageWidth);
-        router.appendChild(module.pageWidth);
-        initiateRoutes(module.pageWidth);
+        module.constructor(router).then(function() {
+          initiateRoutes(router);
+        });
       })
       break;
     case 'cart':
@@ -22,21 +22,19 @@ function routePage() {
     default:
       import('./main.js')
       .then(module => {
-        console.log(module.pageWidth);
-        router.appendChild(module.pageWidth);
-        module.appendEvents().then(function() {
-          initiateRoutes(module.pageWidth);
+        module.constructor(router).then(function() {
+          initiateRoutes(router);
         });
       })
       break;
   }
 }
 initiateRoutes(document);
-//window.onpopstate = onRoute;
+window.onpopstate = onRoute;
 routePage();
 
 function onRoute() {
-  router.innerHTML = "";
+  cleanElement(router);
   window.scrollTo(0, 0);
   routePage();
 }
@@ -56,6 +54,6 @@ function routeLogic(routeElement) {
 function initiateRoutes(element) {
   let routeElements = element.querySelectorAll('[data-route]');
   routeElements.forEach(function(routeElement) {
-    routeElement.addEventListener('click', function() { routeLogic(routeElement); })
+    routeElement.addEventListener('click', function() { routeLogic(routeElement); console.log('click'); })
   });
 };

@@ -468,6 +468,7 @@ ul {
 
 .quantity {
     display: block;
+    background-repeat: no-repeat;
     height: 30px;
     width: 30px;
     margin: 0 10px;
@@ -546,6 +547,36 @@ ul {
 
 .product-description {
     margin-top: 0;
+}
+
+/*=================Categories=================*/
+.shop-sidebar {
+    padding: 15px;
+    margin: 15px 0;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.price-filter-input {
+    width: 60px;
+}
+
+.categories-header {
+    display: flex;
+    margin: 15px 0px;
+    align-items: flex-end;
+    font-size: 1.5em;
+}
+
+.categories-header:first-of-type {
+    margin-top: 0;
+}
+
+.quantity.slidebar {
+    height: 25px;
+    width: 25px;
 }
 /*===================banner===================*/
 

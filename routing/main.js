@@ -284,82 +284,73 @@ var multiItemSlider = (function () {
 
 //====================End-Slider-Logic======================
 
-const request = new Request(
-    "https://my-json-server.typicode.com/MalumDominum/MalumDominum.github.io/products");
+const dbUrl = "https://my-json-server.typicode.com/MalumDominum/MalumDominum.github.io";
 
-import { getProducts } from "./processor.js";
+let constructor = async function(container) {
+  const pageWidth = document.createElement('div');
+  pageWidth.classList.add("page-width");
+  pageWidth.innerHTML =
+  `<div class="slider">
+      <div class="slider-wrapper">
+          <a class="slider-item">
+          <div style="background: center url(slider-content/autumn-sales.jpg); background-size: cover;"></div>
+          </a>
+          <a class="slider-item">
+          <div style="background: center url(slider-content/halloween-sales.jpg); background-size: cover;"></div>
+          </a>
+          <a class="slider-item">
+          <div style="background: center url(slider-content/giveaway.jpg); background-size: cover;"></div>
+          </a>
+          <a class="slider-item">
+          <div style="background: center url(slider-content/black-friday.jpg); background-size: cover;"></div>
+          </a>
+      </div>
+      <a class="slider-control slider-control-left" href="#" role="button"></a>
+      <a class="slider-control slider-control-right" href="#" role="button"></a>
+  </div>
 
-const pageWidth = document.createElement('div');
-pageWidth.classList.add("page-width");
-pageWidth.innerHTML =
-`<div class="slider">
-    <div class="slider-wrapper">
-        <a class="slider-item">
-        <div style="background: center url(slider-content/autumn-sales.jpg); background-size: cover;"></div>
-        </a>
-        <a class="slider-item">
-        <div style="background: center url(slider-content/halloween-sales.jpg); background-size: cover;"></div>
-        </a>
-        <a class="slider-item">
-        <div style="background: center url(slider-content/giveaway.jpg); background-size: cover;"></div>
-        </a>
-        <a class="slider-item">
-        <div style="background: center url(slider-content/black-friday.jpg); background-size: cover;"></div>
-        </a>
-    </div>
-    <a class="slider-control slider-control-left" href="#" role="button"></a>
-    <a class="slider-control slider-control-right" href="#" role="button"></a>
-</div>
+  <div class="hit-goods">
+      <ul class="grid hit-goods-grid"></ul>
+  </div>`
+  container.appendChild(pageWidth);
 
-<div class="hit-goods">
-    <ul class="grid hit-goods-grid"></ul>
-</div>`
 
-function getRandom(arr, n) {
-  var result = new Array(n),
-      len = arr.length,
-      taken = new Array(len);
-  while (n--) {
-      var x = Math.floor(Math.random() * len);
-      result[n] = arr[x in taken ? taken[x] : x];
-      taken[x] = --len in taken ? taken[len] : len;
-  }
-  return result;
-}
 
-let appendEvents = async function() {
+
   multiItemSlider(pageWidth.getElementsByClassName('slider')[0], {
       isCycling: true
   });
   
-  await getProducts().then(function(products) {
-    let recommendedProducts = products.map(function(product) {
-      if (product.recommended) return product;
-    })
-    
-    let hitGoods = pageWidth.getElementsByClassName("hit-goods-grid")[0];
-    let goods = [];
-    // Shuffle array
-    recommendedProducts = recommendedProducts.sort(() => 0.5 - Math.random());
 
-    // Get sub-array of first n elements after shuffled
-    recommendedProducts = recommendedProducts.slice(0, 8);
-    for (let i = 0; i < 8; i++) {
-      goods.push(document.createElement("li"));
-      if (i < 6) { goods[i].classList.add("hit-goods-grid-container", "one-third"); }
-      else { goods[i].classList.add("hit-goods-grid-container", "one-half"); }
-      goods[i].innerHTML =
-     `<a class="hit-goods-grid-item" data-route="#categories/${recommendedProducts[i].subCategoryUrl}/products/${recommendedProducts[i].url}">
-        <div class="hit-goods-grid-item-image" style="background-image: url(product-photos/${recommendedProducts[i].categoryUrl}/${recommendedProducts[i].subCategoryUrl}/${recommendedProducts[i].images[0]});"></div>
-        <div class="hit-goods-grid-item-text-container">
-          <h3 class="hit-goods-grid-item-title">${recommendedProducts[i].name}</h3>
-        </div>
-      </a>`;
 
-      hitGoods.appendChild(goods[i]);
-    }
+  await fetch(new Request(dbUrl + '/products?recommended=true'))
+  .then(function(response) {
+    return response.blob();
+    }).then(async function(blob) {
+      let recommendedProducts = JSON.parse(await blob.text());
+      let hitGoods = pageWidth.getElementsByClassName("hit-goods-grid")[0];
+      let goods = [];
+      // Shuffle array
+      recommendedProducts = recommendedProducts.sort(() => 0.5 - Math.random());
+
+      // Get sub-array of first n elements after shuffled
+      recommendedProducts = recommendedProducts.slice(0, 8);
+      for (let i = 0; i < 8; i++) {
+        goods.push(document.createElement("li"));
+        if (i < 6) { goods[i].classList.add("hit-goods-grid-container", "one-third"); }
+        else { goods[i].classList.add("hit-goods-grid-container", "one-half"); }
+        goods[i].innerHTML =
+        `<a class="hit-goods-grid-item" data-route="#products/${recommendedProducts[i].url}">
+          <div class="hit-goods-grid-item-image" style="background-image: url(product-photos/${recommendedProducts[i].images[0]});"></div>
+          <div class="hit-goods-grid-item-text-container">
+            <h3 class="hit-goods-grid-item-title">${recommendedProducts[i].name}</h3>
+          </div>
+        </a>`;
+
+        hitGoods.appendChild(goods[i]);
+      }
   });
 }
 
-export { pageWidth, appendEvents };
+export { constructor };
 
