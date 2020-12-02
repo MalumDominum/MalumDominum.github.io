@@ -44,16 +44,15 @@ function routeLogic(routeElement) {
   onRoute();
 };
 
-// goods[i].querySelector('[data-route]').onmouseup = function(e) {
-//   var e = e || window.event;
-//   var btnCode = e.button;
-//   if (btnCode === 1)
-//    console.log('Middle button');
-// }
-
 function initiateRoutes(element) {
   let routeElements = element.querySelectorAll('[data-route]');
   routeElements.forEach(function(routeElement) {
-    routeElement.addEventListener('click', function() { routeLogic(routeElement); console.log('click'); })
+    routeElement.addEventListener('click', function() { routeLogic(routeElement); })
+    routeElement.onmouseup = function(e) {
+      var e = e || window.event;
+      var btnCode = e.button;
+      if (btnCode === 1)
+        window.open(window.location.origin + routeElement.dataset.route, '_blank');
+    }
   });
 };

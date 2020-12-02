@@ -340,7 +340,7 @@ let constructor = async function(container) {
         if (i < 6) { goods[i].classList.add("hit-goods-grid-container", "one-third"); }
         else { goods[i].classList.add("hit-goods-grid-container", "one-half"); }
         goods[i].innerHTML =
-        `<a class="hit-goods-grid-item" data-route="#products/${recommendedProducts[i].url}">
+        `<a href="javascript:;" class="hit-goods-grid-item" data-route="#products/${recommendedProducts[i].url}">
           <div class="hit-goods-grid-item-image" style="background-image: url(product-photos/${recommendedProducts[i].images[0]});"></div>
           <div class="hit-goods-grid-item-text-container">
             <h3 class="hit-goods-grid-item-title">${recommendedProducts[i].name}</h3>
