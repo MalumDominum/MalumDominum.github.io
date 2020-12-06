@@ -57,7 +57,7 @@ let constructor = async function(container) {
                     <input class="quantity-input" value="1">
                     <a class="quantity minus"></a>
                 </div>
-                <button class="add-to-cart-button">В корзину</button>
+                <button ${product.inStock ? `` : `disabled` } class="add-to-cart-button" data-addtocart="${product.url}" data-quantity="1">В корзину</button>
                 <p class="product-code">Код: ${product.code}</p>
                 <p class="product-description">
                     ${product.description.replace(/(?:\r\n|\r|\n)/g, '<br>')}
@@ -80,13 +80,16 @@ let constructor = async function(container) {
                 if (quantityInput.value) 
                     quantityInput.value = (parseInt(quantityInput.value, 10) + 1).toString();
                 else quantityInput.value = '1';
+                productSection.querySelector(".add-to-cart-button").dataset.quantity = quantityInput.value;
             })
 
             productSection.querySelector(".quantity.minus").addEventListener('click', function() {
                 if (quantityInput.value && parseInt(quantityInput.value, 10) > 1) 
                     quantityInput.value = (parseInt(quantityInput.value, 10) - 1).toString();
                 else quantityInput.value = '1';
+                productSection.querySelector(".add-to-cart-button").dataset.quantity = quantityInput.value;
             })
+
             
             pageWidth.appendChild(pathElement);
             pageWidth.appendChild(productSection);

@@ -3,40 +3,37 @@ import { getHashDetails, cleanElement } from "./processor.js";
 
 const router = document.getElementById('router');
 
+function initiateComponent(path) {
+  import(path)
+    .then(module => {
+      module.constructor(router).then(function() {
+        initiateAddToCart(router);
+        initiateRoutes(router);
+      });
+    })
+}
+
 function routePage() {
   switch (getHashDetails()[0]) {
     case 'categories':
-      import('./categories.js');
+      initiateComponent('./categories.js');
       break;
     case 'products':
-      import('./products.js')
-      .then(module => {
-        module.constructor(router).then(function() {
-          initiateRoutes(router);
-        });
-      })
+      initiateComponent('./products.js');
       break;
     case 'cart':
-      import('./cart.js');
+      updateCartCounter(JSON.parse(localStorage.getItem('cartData')));
+      initiateComponent('./cart.js');
       break;
     case 'actions':
-      import('./action.js')
-      .then(module => {
-        module.constructor(router).then(function() {
-          initiateRoutes(router);
-        });
-      })
+      initiateComponent('./action.js');
       break;
     default:
-      import('./main.js')
-      .then(module => {
-        module.constructor(router).then(function() {
-          initiateRoutes(router);
-        });
-      })
+      initiateComponent('./main.js');
       break;
   }
 }
+initiateCartLogic();
 initiateRoutes(document);
 window.onpopstate = onRoute;
 routePage();
@@ -64,3 +61,34 @@ function initiateRoutes(element) {
     }
   });
 };
+
+function updateCartCounter(data) {
+  document.querySelector('.header-cart-counter').innerHTML = Object.keys(data).length;
+}
+function initiateCartLogic () {
+  const cartData = localStorage.getItem('cartData');
+  if (!cartData) {
+    localStorage.setItem('cartData', '{}');
+    updateCartCounter({});
+  } else {
+    updateCartCounter(JSON.parse(cartData));
+  }
+}
+
+function initiateAddToCart(element) {
+  let addToCartElements = element.querySelectorAll('[data-addtocart]');
+  addToCartElements.forEach(function(routeElement) {
+    routeElement.addEventListener('click', function(e) {
+      let cartData = JSON.parse(localStorage.getItem('cartData'));
+      let quantity = this.dataset.quantity ? this.dataset.quantity : 1;
+      if(cartData[this.dataset.addtocart]) {
+        cartData[this.dataset.addtocart] += (+quantity);
+      } else {
+        cartData[this.dataset.addtocart] = +quantity;
+      }
+      updateCartCounter(cartData);
+      localStorage.setItem('cartData', JSON.stringify(cartData));
+      alert('Продукт(ы) был(и) добавлен(ы) в вашу корзину!')
+    })
+  });
+}
