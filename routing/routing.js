@@ -20,7 +20,12 @@ function routePage() {
       import('./cart.js');
       break;
     case 'actions':
-      import('./cart.js');
+      import('./action.js')
+      .then(module => {
+        module.constructor(router).then(function() {
+          initiateRoutes(router);
+        });
+      })
       break;
     default:
       import('./main.js')

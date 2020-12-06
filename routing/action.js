@@ -1,13 +1,14 @@
-const { getHashDetails } = require("./processor");
+import { getHashDetails } from "./processor.js";
 
 const dbUrl = "https://my-json-server.typicode.com/MalumDominum/MalumDominum.github.io";
 
 let constructor = async function(container) {
-    await fetch(new Request(dbUrl + '/action?url=' + getHashDetails()[1]))
+    await fetch(new Request(dbUrl + '/actions?url=' + getHashDetails()[1]))
     .then(function(response) {
         return response.blob();
     }).then(async function(blob) {
         let action = JSON.parse(await blob.text());
+        console.log(action)
         const pageWidth = document.createElement('div');
         pageWidth.classList.add("page-width");
         pageWidth.innerHTML =
@@ -17,6 +18,6 @@ let constructor = async function(container) {
 
         container.appendChild(pageWidth);
     }
-);
+);}
 
 export { constructor };
