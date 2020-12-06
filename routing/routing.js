@@ -19,6 +19,9 @@ function routePage() {
     case 'cart':
       import('./cart.js');
       break;
+    case 'actions':
+      import('./cart.js');
+      break;
     default:
       import('./main.js')
       .then(module => {

@@ -930,3 +930,16 @@ ul {
         display: block;
     }
 }
+
+/*********************Action*********************/
+.action-title {
+    color: #333333;
+    background: #FFFFFF;
+    text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+}
+
+.action-image {
+    object-fit: contain;
+    height: auto;
+    width: 100%;
+}
