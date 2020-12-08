@@ -16,8 +16,8 @@ let constructor = async function(container) {
             </div>
         </div>
         <div class="cart-buttons">
-            <button id="clearCart">Очистить корзину</button>
-            <button id="order">Заказать</button>
+            <button id="clearCart" class="okay-button red">Очистить корзину</button>
+            <button id="order" class="okay-button">Заказать</button>
         </div>
     </div>
     `;

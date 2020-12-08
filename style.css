@@ -658,6 +658,12 @@ ul {
     color: #000;
 }
 
+.okay-button:hover.red,
+.okay-button:active.red {
+    background-color: #B3101E;
+    color: #000;
+}
+
 .quantity.slidebar {
     height: 25px;
     width: 25px;
@@ -666,11 +672,9 @@ ul {
 .collection-grid {
     display: flex;
     list-style: none;
-    /* width: 69%; */
     width: 100%;
     margin: 0;
     padding: 15px 0;
-    /* margin-left: -30px; */
     overflow: hidden;
 }
 
@@ -710,10 +714,6 @@ ul {
     top: 0;
     right: 0;
     margin: 0;
-}
-
-.add-to-cart-button.little {
-    
 }
 
 /*********************Action*********************/

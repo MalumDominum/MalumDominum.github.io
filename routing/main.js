@@ -287,34 +287,38 @@ var multiItemSlider = (function () {
 const dbUrl = "https://my-json-server.typicode.com/MalumDominum/MalumDominum.github.io";
 
 let constructor = async function(container) {
-  const pageWidth = document.createElement('div');
-  pageWidth.classList.add("page-width");
-  pageWidth.innerHTML =
-  `<div class="slider">
-      <div class="slider-wrapper">
-          <a class="slider-item">
-          <div style="background: center url(slider-content/autumn-sales.jpg); background-size: cover;"></div>
-          </a>
-          <a class="slider-item">
-          <div style="background: center url(slider-content/halloween-sales.jpg); background-size: cover;"></div>
-          </a>
-          <a class="slider-item">
-          <div style="background: center url(slider-content/giveaway.jpg); background-size: cover;"></div>
-          </a>
-          <a class="slider-item">
-          <div style="background: center url(slider-content/black-friday.jpg); background-size: cover;"></div>
-          </a>
+  await fetch(new Request(dbUrl + '/actions'))
+  .then(function(response) {
+    return response.blob();
+    }).then(async function(blob) {
+      let actions = JSON.parse(await blob.text());
+      const pageWidth = document.createElement('div');
+      pageWidth.classList.add("page-width");
+      pageWidth.innerHTML =
+      `<div class="slider">
+          <div class="slider-wrapper">
+          </div>
+          <a class="slider-control slider-control-left" href="#" role="button"></a>
+          <a class="slider-control slider-control-right" href="#" role="button"></a>
       </div>
-      <a class="slider-control slider-control-left" href="#" role="button"></a>
-      <a class="slider-control slider-control-right" href="#" role="button"></a>
-  </div>
+    
+      <div class="hit-goods">
+          <ul class="grid hit-goods-grid"></ul>
+      </div>`;
 
-  <div class="hit-goods">
-      <ul class="grid hit-goods-grid"></ul>
-  </div>`
-  container.appendChild(pageWidth);
+      let sliderWrapper = pageWidth.getElementsByClassName("slider-wrapper")[0];
+      let actionItems = [];
 
+      for (let i = 0; i < actions.length; i++) {
+        actionItems.push(document.createElement("a"));
+        actionItems[i].classList.add("slider-item"); 
+        actionItems[i].innerHTML =
+        `<div href="javascript:;" style="background: center url(${actions[i].photo}); background-size: cover;" data-route="#actions/${actions[i].url}"></div>`;
+        sliderWrapper.appendChild(actionItems[i]);
+      }
 
+      container.appendChild(pageWidth);
+  });
 
 
   multiItemSlider(pageWidth.getElementsByClassName('slider')[0], {
