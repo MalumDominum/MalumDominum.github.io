@@ -1,6 +1,6 @@
 import { getHashDetails } from "./processor.js";
 
-const dbUrl = "https://my-json-server.typicode.com/MalumDominum/MalumDominum.github.io";
+const dbUrl = "https://my-json-server.typicode.com/MalumDominum/AnimeInternetShopDb";
 
 let constructor = async function(container) {
     await fetch(new Request(dbUrl + '/actions?url=' + getHashDetails()[1]))

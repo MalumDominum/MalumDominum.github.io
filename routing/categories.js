@@ -1,17 +1,16 @@
 'use strict';
 
-const dbUrl = "https://my-json-server.typicode.com/MalumDominum/MalumDominum.github.io";
+const dbUrl = "https://my-json-server.typicode.com/MalumDominum/AnimeInternetShopDb";
 import { getHashDetails } from "./processor.js";
 
 let constructor = async function(container) {
     const pageWidth = document.createElement('div');
     pageWidth.classList.add('page-width');
-    pageWidth.innerHTML = `
-    <div class="categories">
+    pageWidth.innerHTML = 
+    `<div class="categories">
         <ul class="collection-grid">
         </ul>
-    </div>
-    `;
+    </div>`;
     container.appendChild(pageWidth);
     let hash = getHashDetails();
     await fetch(new Request(dbUrl + '/categories?url=' + hash[1]))
