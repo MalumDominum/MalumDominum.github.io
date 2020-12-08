@@ -646,6 +646,8 @@ ul {
 .okay-button {
     background-color: #000;
     color: #fff;
+    font-size: 1.1em;
+    margin: 0 0 10px 10px;
     border-radius: 8px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);  
     padding: 0.25em 0.75em;
@@ -661,7 +663,7 @@ ul {
 .okay-button:hover.red,
 .okay-button:active.red {
     background-color: #B3101E;
-    color: #000;
+    color: #fff;
 }
 
 .quantity.slidebar {
@@ -766,6 +768,11 @@ ul {
     max-height: 100px;
     object-fit: contain;
     object-position: left;
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: flex-end;
 }
 
 /*===================banner===================*/
