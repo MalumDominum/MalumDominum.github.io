@@ -286,13 +286,7 @@ var multiItemSlider = (function () {
 
 const dbUrl = "https://my-json-server.typicode.com/MalumDominum/AnimeInternetShopDb";
 
-let constructor = async function(container) {
-  await fetch(new Request(dbUrl + '/actions'))
-  .then(function(response) {
-    return response.blob();
-    }).then(async function(blob) {
-      let actions = JSON.parse(await blob.text());
-      const pageWidth = document.createElement('div');
+const pageWidth = document.createElement('div');
       pageWidth.classList.add("page-width");
       pageWidth.innerHTML =
       `<div class="slider">
@@ -306,6 +300,12 @@ let constructor = async function(container) {
           <ul class="grid hit-goods-grid"></ul>
       </div>`;
 
+let constructor = async function(container) {
+  await fetch(new Request(dbUrl + '/actions'))
+  .then(function(response) {
+    return response.blob();
+    }).then(async function(blob) {
+      let actions = JSON.parse(await blob.text());
       let sliderWrapper = pageWidth.getElementsByClassName("slider-wrapper")[0];
       let actionItems = [];
 
