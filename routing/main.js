@@ -289,7 +289,7 @@ const dbUrl = "https://my-json-server.typicode.com/MalumDominum/AnimeInternetSho
 const pageWidth = document.createElement('div');
       pageWidth.classList.add("page-width");
       pageWidth.innerHTML =
-      `<div class="slider">
+     `<div class="slider">
           <div class="slider-wrapper">
           </div>
           <a class="slider-control slider-control-left" href="#" role="button"></a>

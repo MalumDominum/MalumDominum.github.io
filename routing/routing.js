@@ -1,5 +1,8 @@
 'use strict';
+import { addMobileEvents } from "../script.js";
 import { getHashDetails, cleanElement } from "./processor.js";
+
+addMobileEvents();
 
 const router = document.getElementById('router');
 

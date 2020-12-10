@@ -7,7 +7,7 @@ let constructor = async function(container) {
     const pageWidth = document.createElement('div');
     pageWidth.classList.add('page-width');
     pageWidth.innerHTML = 
-    `<div class="categories">
+   `<div class="categories">
         <ul class="collection-grid">
         </ul>
     </div>`;
@@ -27,8 +27,8 @@ let constructor = async function(container) {
             products.forEach(function (currentProduct){
                 const currentProductEl = document.createElement('li');
                 currentProductEl.classList.add('collection-item');
-                currentProductEl.innerHTML = `
-                <div data-route="#products/${currentProduct.url}" class="box-image">
+                currentProductEl.innerHTML = 
+               `<div data-route="#products/${currentProduct.url}" class="box-image">
                     <a class="collection-item-photo-container">
                         ${currentProduct.sale ? `<p class="sale-label in-collection">${currentProduct.sale}%</p>` : ``}
                         <img class="collection-item-photo" src="product-photos/${currentProduct.images[0]}">
@@ -45,8 +45,7 @@ let constructor = async function(container) {
                             : `<p class="product-price">${(currentProduct.price).toFixed(2)} грн</p>`}
                     </div>
                     <button ${currentProduct.inStock ? `` : `disabled` } class="add-to-cart-button little" data-addtocart="${currentProduct.url}">В корзину</button>
-                </div>
-                `;
+                </div>`;
                 productsListEl.appendChild(currentProductEl);
             });
         });
@@ -111,77 +110,6 @@ export { constructor };
                 </form>
             </div>
         </div>
-
-        <ul class="collection-grid">
-            <li class="collection-item">
-                <div class="box-image">
-                    <a class="collection-item-photo-container">
-                        <p class="sale-label in-collection">30%</p>
-                        <img class="collection-item-photo" src="product-photos/adventure-time-of-marceline-and-the-scream-queen.jpg">
-                    </a>
-                </div>
-                <div class="collection-item-meta">
-                    <div class="in-stock little">В наличии</div>
-                    <p class="collection-item-title">Re:Zero - Rem Fallen Angel LPM Prize Figure</p>
-                    <div class="collection-item-price-container">
-                        <p class="product-price crossed-out">400 грн</p>
-                        <p class="product-price discounted">200 грн</p>
-                    </div>
-                    <button class="add-to-cart-button little">В корзину</button>
-                </div>
-            </li>
-            <li class="collection-item">
-                <div class="box-image">
-                    <a class="collection-item-photo-container">
-                        <p class="sale-label in-collection">30%</p>
-                        <img class="collection-item-photo" src="product-photos/adventure-time-of-marceline-and-the-scream-queen.jpg">
-                    </a>
-                </div>
-                <div class="collection-item-meta">
-                    <div class="in-stock little">В наличии</div>
-                    <p class="collection-item-title">Re:Zero - Rem Fallen Angel LPM Prize Figure</p>
-                    <div class="collection-item-price-container">
-                        <p class="product-price crossed-out">400 грн</p>
-                        <p class="product-price discounted">200 грн</p>
-                    </div>
-                    <button class="add-to-cart-button little">В корзину</button>
-                </div>
-            </li>
-            <li class="collection-item">
-                <div class="box-image">
-                    <a class="collection-item-photo-container">
-                        <p class="sale-label in-collection">30%</p>
-                        <img class="collection-item-photo" src="product-photos/asuna-sao.jpg">
-                    </a>
-                </div>
-                <div class="collection-item-meta">
-                    <div class="in-stock little">В наличии</div>
-                    <p class="collection-item-title">Re:Zero - Rem Fallen Angel LPM Prize Figure</p>
-                    <div class="collection-item-price-container">
-                        <p class="product-price crossed-out">400 грн</p>
-                        <p class="product-price discounted">200 грн</p>
-                    </div>
-                    <button class="add-to-cart-button little">В корзину</button>
-                </div>
-            </li>
-            <li class="collection-item">
-                <div class="box-image">
-                    <a class="collection-item-photo-container">
-                        <p class="sale-label in-collection">30%</p>
-                        <img class="collection-item-photo" src="product-photos/character-design-quarterly-.jpg">
-                    </a>
-                </div>
-                <div class="collection-item-meta">
-                    <div class="in-stock little">В наличии</div>
-                    <p class="collection-item-title">Re:Zero - Rem Fallen Angel LPM Prize Figure</p>
-                    <div class="collection-item-price-container">
-                        <p class="product-price crossed-out">400 грн</p>
-                        <p class="product-price discounted">200 грн</p>
-                    </div>
-                    <button class="add-to-cart-button little">В корзину</button>
-                </div>
-            </li>
-        </ul>
     </div>
 </div>
 */
