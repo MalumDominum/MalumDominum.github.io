@@ -38,10 +38,10 @@ let constructor = async function(container) {
                     ${currentProduct.inStock ? `<div class="in-stock little">В наличии</div>` 
                                     : `<div class="not-in-stock little">Нет в наличии</div>`}
                     <p class="collection-item-title">${currentProduct.name}</p>
-                    <div class="collection-item-price-container">
+                    <div class="collection-item-price-container categories">
                         ${currentProduct.sale ? 
-                            `<p class="product-price crossed-out">${(currentProduct.price).toFixed(2)} грн</p>
-                            <p class="product-price discounted">${(currentProduct.price * (100 - currentProduct.sale) / 100).toFixed(2)} грн</p>` 
+                            `<p class="product-price discounted">${(currentProduct.price * (100 - currentProduct.sale) / 100).toFixed(2)} грн</p>
+                            <p class="product-price crossed-out">${(currentProduct.price).toFixed(2)} грн</p>`
                             : `<p class="product-price">${(currentProduct.price).toFixed(2)} грн</p>`}
                     </div>
                     <button ${currentProduct.inStock ? `` : `disabled` } class="add-to-cart-button little" data-addtocart="${currentProduct.url}">В корзину</button>
@@ -111,77 +111,6 @@ export { constructor };
                 </form>
             </div>
         </div>
-
-        <ul class="collection-grid">
-            <li class="collection-item">
-                <div class="box-image">
-                    <a class="collection-item-photo-container">
-                        <p class="sale-label in-collection">30%</p>
-                        <img class="collection-item-photo" src="product-photos/adventure-time-of-marceline-and-the-scream-queen.jpg">
-                    </a>
-                </div>
-                <div class="collection-item-meta">
-                    <div class="in-stock little">В наличии</div>
-                    <p class="collection-item-title">Re:Zero - Rem Fallen Angel LPM Prize Figure</p>
-                    <div class="collection-item-price-container">
-                        <p class="product-price crossed-out">400 грн</p>
-                        <p class="product-price discounted">200 грн</p>
-                    </div>
-                    <button class="add-to-cart-button little">В корзину</button>
-                </div>
-            </li>
-            <li class="collection-item">
-                <div class="box-image">
-                    <a class="collection-item-photo-container">
-                        <p class="sale-label in-collection">30%</p>
-                        <img class="collection-item-photo" src="product-photos/adventure-time-of-marceline-and-the-scream-queen.jpg">
-                    </a>
-                </div>
-                <div class="collection-item-meta">
-                    <div class="in-stock little">В наличии</div>
-                    <p class="collection-item-title">Re:Zero - Rem Fallen Angel LPM Prize Figure</p>
-                    <div class="collection-item-price-container">
-                        <p class="product-price crossed-out">400 грн</p>
-                        <p class="product-price discounted">200 грн</p>
-                    </div>
-                    <button class="add-to-cart-button little">В корзину</button>
-                </div>
-            </li>
-            <li class="collection-item">
-                <div class="box-image">
-                    <a class="collection-item-photo-container">
-                        <p class="sale-label in-collection">30%</p>
-                        <img class="collection-item-photo" src="product-photos/asuna-sao.jpg">
-                    </a>
-                </div>
-                <div class="collection-item-meta">
-                    <div class="in-stock little">В наличии</div>
-                    <p class="collection-item-title">Re:Zero - Rem Fallen Angel LPM Prize Figure</p>
-                    <div class="collection-item-price-container">
-                        <p class="product-price crossed-out">400 грн</p>
-                        <p class="product-price discounted">200 грн</p>
-                    </div>
-                    <button class="add-to-cart-button little">В корзину</button>
-                </div>
-            </li>
-            <li class="collection-item">
-                <div class="box-image">
-                    <a class="collection-item-photo-container">
-                        <p class="sale-label in-collection">30%</p>
-                        <img class="collection-item-photo" src="product-photos/character-design-quarterly-.jpg">
-                    </a>
-                </div>
-                <div class="collection-item-meta">
-                    <div class="in-stock little">В наличии</div>
-                    <p class="collection-item-title">Re:Zero - Rem Fallen Angel LPM Prize Figure</p>
-                    <div class="collection-item-price-container">
-                        <p class="product-price crossed-out">400 грн</p>
-                        <p class="product-price discounted">200 грн</p>
-                    </div>
-                    <button class="add-to-cart-button little">В корзину</button>
-                </div>
-            </li>
-        </ul>
     </div>
 </div>
 */

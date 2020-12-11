@@ -65,6 +65,7 @@ function initiateRoutes(element) {
 function updateCartCounter(data) {
   document.querySelector('.header-cart-counter').innerHTML = Object.keys(data).length;
 }
+
 function initiateCartLogic () {
   const cartData = localStorage.getItem('cartData');
   if (!cartData) {

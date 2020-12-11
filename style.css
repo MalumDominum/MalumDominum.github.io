@@ -686,6 +686,11 @@ ul {
     box-shadow: none;
 }
 
+.collection-item-price-container.categories > .product-price {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
 .collection-item:hover {
     -webkit-box-shadow: 0 10px 15px -5px #000000;
     box-shadow: 0 10px 15px -5px #000000;

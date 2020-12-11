@@ -286,21 +286,21 @@ var multiItemSlider = (function () {
 
 const dbUrl = "https://my-json-server.typicode.com/MalumDominum/AnimeInternetShopDb";
 
-const pageWidth = document.createElement('div');
-      pageWidth.classList.add("page-width");
-      pageWidth.innerHTML =
-      `<div class="slider">
-          <div class="slider-wrapper">
-          </div>
-          <a class="slider-control slider-control-left" href="#" role="button"></a>
-          <a class="slider-control slider-control-right" href="#" role="button"></a>
-      </div>
-    
-      <div class="hit-goods">
-          <ul class="grid hit-goods-grid"></ul>
-      </div>`;
-
 let constructor = async function(container) {
+  const pageWidth = document.createElement('div');
+  pageWidth.classList.add("page-width");
+  pageWidth.innerHTML =
+  `<div class="slider">
+      <div class="slider-wrapper">
+      </div>
+      <a class="slider-control slider-control-left" href="#" role="button"></a>
+      <a class="slider-control slider-control-right" href="#" role="button"></a>
+  </div>
+
+  <div class="hit-goods">
+      <ul class="grid hit-goods-grid"></ul>
+  </div>`;
+
   await fetch(new Request(dbUrl + '/actions'))
   .then(function(response) {
     return response.blob();
