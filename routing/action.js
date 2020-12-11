@@ -13,7 +13,7 @@ let constructor = async function(container) {
         pageWidth.innerHTML =
         `<h1 class="action-title">${action.title}</h1>
         <img src="${action.photo}" class="action-image">
-        <p>${action.description}</p>`
+        <p>${action.description.replace(/(?:\r\n|\r|\n)/g, '<br>')}</p>`
 
         container.appendChild(pageWidth);
     }
