@@ -17,7 +17,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                use: ["style-loader", "css-loader"]
             },
         ],
     },
@@ -28,7 +28,7 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: "img", to: "img" },
+                { from: "img", to: "img" }
             ],
         }),
     ]

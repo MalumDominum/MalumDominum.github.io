@@ -1,5 +1,23 @@
 'use strict';
-//==============Buttons-for-Mobile==============
+
+let getHashDetails = function() {
+    let splitedHash = window.location.hash.replace('#', '').split('/');
+    switch (splitedHash.length) {
+        case 1: return [ splitedHash[0] ];  //cart
+
+        case 2: return [ splitedHash[0],    //categories | products
+                         splitedHash[1] ];
+
+        default: return [''];
+    }
+};
+
+let cleanElement = function(element) {
+    while(element.hasChildNodes())
+        element.removeChild(element.lastChild);
+}
+
+//==============Events-for-Mobile==============
 const addMobileEvents = function () { 
   let menuButton = document.getElementById("header-menu");
   const headerMobile = document.getElementById("header-mobile");
@@ -14,4 +32,5 @@ const addMobileEvents = function () {
       footerContainers[i].classList.toggle('hidden')
   })};
 }
-export { addMobileEvents }
+
+export { getHashDetails, cleanElement, addMobileEvents };

@@ -1,5 +1,5 @@
 {
-  "name": "your-application",
+  "name": "anime-internet-shop",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,17 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourname/your_site.git"
+    "url": "git+https://github.com/MalumDominum/MalumDominum.github.io"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yourname/your_site/issues"
+    "url": "https://github.com/MalumDominum/MalumDominum.github.io/issues"
   },
   "browserslist": [
     "> 0.25%, not dead"
   ],
-  "homepage": "https://github.com/yourname/your_site#readme",
+  "homepage": "https://github.com/MalumDominum/MalumDominum.github.io#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.12.7",
     "babel-jest": "^26.6.3",

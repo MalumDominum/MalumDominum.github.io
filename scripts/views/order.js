@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use strict';
 const dbUrl = "https://my-json-server.typicode.com/MalumDominum/AnimeInternetShopDb";
 

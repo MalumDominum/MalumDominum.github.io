@@ -1,4 +1,4 @@
-import { getHashDetails } from "./processor.js";
+import { getHashDetails } from "../processor.js";
 
 const dbUrl = "https://my-json-server.typicode.com/MalumDominum/AnimeInternetShopDb";
 

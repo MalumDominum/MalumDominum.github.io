@@ -1,7 +1,7 @@
 'use strict';
 const dbUrl = "https://my-json-server.typicode.com/MalumDominum/AnimeInternetShopDb";
 
-import { getHashDetails } from "./processor.js";
+import { getHashDetails } from "../processor.js";
 
 let constructor = async function(container) {
     const pageWidth = document.createElement('div');

@@ -1,6 +1,5 @@
 'use strict';
-import { addMobileEvents } from "../script.js";
-import { getHashDetails, cleanElement } from "./processor.js";
+import { getHashDetails, cleanElement, addMobileEvents } from "./processor";
 
 addMobileEvents();
 
@@ -8,31 +7,31 @@ const router = document.getElementById('router');
 
 function initiateComponent(path) {
   import(path)
-    .then(module => {
-      module.constructor(router).then(function() {
-        initiateAddToCart(router);
-        initiateRoutes(router);
-      });
-    })
+  .then(module => {
+    module.constructor(router).then(function() {
+      initiateAddToCart(router);
+      initiateRoutes(router);
+    });
+  })
 }
 
 function routePage() {
   switch (getHashDetails()[0]) {
     case 'categories':
-      initiateComponent('./categories.js');
+      initiateComponent('./views/categories.js');
       break;
     case 'products':
-      initiateComponent('./products.js');
+      initiateComponent('./views/products.js');
       break;
     case 'cart':
       updateCartCounter(JSON.parse(localStorage.getItem('cartData')));
-      initiateComponent('./cart.js');
+      initiateComponent('./views/cart.js');
       break;
     case 'actions':
-      initiateComponent('./action.js');
+      initiateComponent('./views/action.js');
       break;
     default:
-      initiateComponent('./main.js');
+      initiateComponent('./views/main.js');
       break;
   }
 }
