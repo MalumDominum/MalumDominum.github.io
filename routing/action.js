@@ -7,13 +7,12 @@ let constructor = async function(container) {
     .then(function(response) {
         return response.blob();
     }).then(async function(blob) {
-        let action = JSON.parse(await blob.text());
-        console.log(action)
+        let action = JSON.parse(await blob.text())[0];
         const pageWidth = document.createElement('div');
         pageWidth.classList.add("page-width");
         pageWidth.innerHTML =
         `<h1 class="action-title">${action.title}</h1>
-        <img src="${action.image}" class="action-image">
+        <img src="${action.photo}" class="action-image">
         <p>${action.description}</p>`
 
         container.appendChild(pageWidth);
