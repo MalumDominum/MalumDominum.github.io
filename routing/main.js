@@ -1,8 +1,8 @@
 'use strict';
 
-var multiItemSlider = (function () {
-    function _isElementVisible(element) {
-      var rect = element.getBoundingClientRect(),
+let multiItemSlider = (function () {
+    function isElementVisible(element) {
+      let rect = element.getBoundingClientRect(),
         vWidth = window.innerWidth || doc.documentElement.clientWidth,
         vHeight = window.innerHeight || doc.documentElement.clientHeight,
         elemFromPoint = function (x, y) { return document.elementFromPoint(x, y) };
@@ -18,265 +18,265 @@ var multiItemSlider = (function () {
     }
 
     return function (element, config) {
-      var
-        _mainElement = element,
-        _sliderWrapper = _mainElement.querySelector('.slider-wrapper'),
-        _sliderItems = _mainElement.querySelectorAll('.slider-item'),
-        _sliderControls = _mainElement.querySelectorAll('.slider-control'),
-        _sliderControlLeft = _mainElement.querySelector('.slider-control-left'),
-        _sliderControlRight = _mainElement.querySelector('.slider-control-right'),
-        _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width),
-        _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width),
-        _html = _mainElement.innerHTML,
-        _indexIndicator = 0,
-        _maxIndexIndicator = _sliderItems.length - 1,
-        _indicatorItems,
-        _positionLeftItem = 0,
-        _transform = 0,
-        _step = _itemWidth / _wrapperWidth * 100,
-        _items = [],
-        _interval = 0,
-        _states = [
+      let
+        mainElement = element,
+        sliderWrapper = mainElement.querySelector('.slider-wrapper'),
+        sliderItems = mainElement.querySelectorAll('.slider-item'),
+        sliderControls = mainElement.querySelectorAll('.slider-control'),
+        sliderControlLeft = mainElement.querySelector('.slider-control-left'),
+        sliderControlRight = mainElement.querySelector('.slider-control-right'),
+        wrapperWidth = parseFloat(getComputedStyle(sliderWrapper).width),
+        itemWidth = parseFloat(getComputedStyle(sliderItems[0]).width),
+        html = mainElement.innerHTML,
+        indexIndicator = 0,
+        maxIndexIndicator = sliderItems.length - 1,
+        indicatorItems,
+        positionLeftItem = 0,
+        transform = 0,
+        step = itemWidth / wrapperWidth * 100,
+        items = [],
+        interval = 0,
+        states = [
           { active: false, minWidth: 0, count: 1 },
           { active: false, minWidth: 576, count: 2 },
           { active: false, minWidth: 992, count: 3 },
           { active: false, minWidth: 1200, count: 4 },
-        ],
-        _config = {
+        ];
+        config = {
           isCycling: false,
           direction: 'right',
           interval: 5000,
           pause: true
         };
 
-      for (var key in config) {
-        if (key in _config) {
-          _config[key] = config[key];
+      for (let key in config) {
+        if (key in config) {
+          config[key] = config[key];
         }
       }
 
-      _sliderItems.forEach(function (item, index) {
-        _items.push({ item: item, position: index, transform: 0 });
+      sliderItems.forEach(function (item, index) {
+        items.push({ item: item, position: index, transform: 0 });
       });
 
-      var _setActive = function () {
-        var _index = 0;
-        var width = parseFloat(document.body.clientWidth);
-        _states.forEach(function (item, index, arr) {
-          _states[index].active = false;
-          if (width >= _states[index].minWidth)
-            _index = index;
+      let setActive = function () {
+        let index = 0;
+        let width = parseFloat(document.body.clientWidth);
+        states.forEach(function (item, index, arr) {
+          states[index].active = false;
+          if (width >= states[index].minWidth)
+            index = index;
         });
-        _states[_index].active = true;
+        states[index].active = true;
       }
 
-      var _getActive = function () {
-        var _index;
-        _states.forEach(function (item, index, arr) {
-          if (_states[index].active) {
-            _index = index;
+      let getActive = function () {
+        let index;
+        states.forEach(function (item, index, arr) {
+          if (states[index].active) {
+            index = index;
           }
         });
-        return _index;
+        return index;
       }
 
-      var position = {
+      let position = {
         getItemMin: function () {
-          var indexItem = 0;
-          _items.forEach(function (item, index) {
-            if (item.position < _items[indexItem].position) {
+          let indexItem = 0;
+          items.forEach(function (item, index) {
+            if (item.position < items[indexItem].position) {
               indexItem = index;
             }
           });
           return indexItem;
         },
         getItemMax: function () {
-          var indexItem = 0;
-          _items.forEach(function (item, index) {
-            if (item.position > _items[indexItem].position) {
+          let indexItem = 0;
+          items.forEach(function (item, index) {
+            if (item.position > items[indexItem].position) {
               indexItem = index;
             }
           });
           return indexItem;
         },
         getMin: function () {
-          return _items[position.getItemMin()].position;
+          return items[position.getItemMin()].position;
         },
         getMax: function () {
-          return _items[position.getItemMax()].position;
+          return items[position.getItemMax()].position;
         }
       }
 
-      var _transformItem = function (direction) {
-        var nextItem, currentIndicator = _indexIndicator;
-        if (!_isElementVisible(_mainElement)) {
+      let transformItem = function (direction) {
+        let nextItem, currentIndicator = indexIndicator;
+        if (!isElementVisible(mainElement)) {
           return;
         }
         if (direction === 'right') {
-          _positionLeftItem++;
-          if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) > position.getMax()) {
+          positionLeftItem++;
+          if ((positionLeftItem + wrapperWidth / itemWidth - 1) > position.getMax()) {
             nextItem = position.getItemMin();
-            _items[nextItem].position = position.getMax() + 1;
-            _items[nextItem].transform += _items.length * 100;
-            _items[nextItem].item.style.transform = 'translateX(' + _items[nextItem].transform + '%)';
+            items[nextItem].position = position.getMax() + 1;
+            items[nextItem].transform += items.length * 100;
+            items[nextItem].item.style.transform = 'translateX(' + items[nextItem].transform + '%)';
           }
-          _transform -= _step;
-          _indexIndicator = _indexIndicator + 1;
-          if (_indexIndicator > _maxIndexIndicator) {
-            _indexIndicator = 0;
+          transform -= step;
+          indexIndicator = indexIndicator + 1;
+          if (indexIndicator > maxIndexIndicator) {
+            indexIndicator = 0;
           }
         }
         if (direction === 'left') {
-          _positionLeftItem--;
-          if (_positionLeftItem < position.getMin()) {
+          positionLeftItem--;
+          if (positionLeftItem < position.getMin()) {
             nextItem = position.getItemMax();
-            _items[nextItem].position = position.getMin() - 1;
-            _items[nextItem].transform -= _items.length * 100;
-            _items[nextItem].item.style.transform = 'translateX(' + _items[nextItem].transform + '%)';
+            items[nextItem].position = position.getMin() - 1;
+            items[nextItem].transform -= items.length * 100;
+            items[nextItem].item.style.transform = 'translateX(' + items[nextItem].transform + '%)';
           }
-          _transform += _step;
-          _indexIndicator = _indexIndicator - 1;
-          if (_indexIndicator < 0) {
-            _indexIndicator = _maxIndexIndicator;
+          transform += step;
+          indexIndicator = indexIndicator - 1;
+          if (indexIndicator < 0) {
+            indexIndicator = maxIndexIndicator;
           }
         }
-        _sliderWrapper.style.transform = 'translateX(' + _transform + '%)';
-        _indicatorItems[currentIndicator].classList.remove('active');
-        _indicatorItems[_indexIndicator].classList.add('active');
+        sliderWrapper.style.transform = 'translateX(' + transform + '%)';
+        indicatorItems[currentIndicator].classList.remove('active');
+        indicatorItems[indexIndicator].classList.add('active');
       }
 
-      var _slideTo = function (to) {
-        var i = 0, direction = (to > _indexIndicator) ? 'right' : 'left';
-        while (to !== _indexIndicator && i <= _maxIndexIndicator) {
-          _transformItem(direction);
+      let slideTo = function (to) {
+        let i = 0, direction = (to > indexIndicator) ? 'right' : 'left';
+        while (to !== indexIndicator && i <= maxIndexIndicator) {
+          transformItem(direction);
           i++;
         }
       }
 
-      var _cycle = function (direction) {
-        if (!_config.isCycling) {
+      let cycle = function (direction) {
+        if (!config.isCycling) {
           return;
         }
-        _interval = setInterval(function () {
-          _transformItem(direction);
-        }, _config.interval);
+        interval = setInterval(function () {
+          transformItem(direction);
+        }, config.interval);
       }
 
-      var _controlClick = function (e) {
+      let controlClick = function (e) {
         if (e.target.classList.contains('slider-control')) {
           e.preventDefault();
-          var direction = e.target.classList.contains('slider-control-right') ? 'right' : 'left';
-          _transformItem(direction);
-          clearInterval(_interval);
-          _cycle(_config.direction);
+          let direction = e.target.classList.contains('slider-control-right') ? 'right' : 'left';
+          transformItem(direction);
+          clearInterval(interval);
+          cycle(config.direction);
         }
         if (e.target.getAttribute('data-slide-to')) {
           e.preventDefault();
-          _slideTo(parseInt(e.target.getAttribute('data-slide-to')));
-          clearInterval(_interval);
-          _cycle(_config.direction);
+          slideTo(parseInt(e.target.getAttribute('data-slide-to')));
+          clearInterval(interval);
+          cycle(config.direction);
         }
       };
 
-      var _handleVisibilityChange = function () {
+      let handleVisibilityChange = function () {
         if (document.visibilityState === "hidden") {
-          clearInterval(_interval);
+          clearInterval(interval);
         } else {
-          clearInterval(_interval);
-          _cycle(_config.direction);
+          clearInterval(interval);
+          cycle(config.direction);
         }
       }
 
-      var _refresh = function () {
-        clearInterval(_interval);
-        _mainElement.innerHTML = _html;
-        _sliderWrapper = _mainElement.querySelector('.slider-wrapper');
-        _sliderItems = _mainElement.querySelectorAll('.slider-item');
-        _sliderControls = _mainElement.querySelectorAll('.slider-control');
-        _sliderControlLeft = _mainElement.querySelector('.slider-control-left');
-        _sliderControlRight = _mainElement.querySelector('.slider-control-right');
-        _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width);
-        _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width);
-        _positionLeftItem = 0;
-        _transform = 0;
-        _indexIndicator = 0;
-        _maxIndexIndicator = _sliderItems.length - 1;
-        _step = _itemWidth / _wrapperWidth * 100;
-        _items = [];
-        _sliderItems.forEach(function (item, index) {
-          _items.push({ item: item, position: index, transform: 0 });
+      let refresh = function () {
+        clearInterval(interval);
+        mainElement.innerHTML = html;
+        sliderWrapper = mainElement.querySelector('.slider-wrapper');
+        sliderItems = mainElement.querySelectorAll('.slider-item');
+        sliderControls = mainElement.querySelectorAll('.slider-control');
+        sliderControlLeft = mainElement.querySelector('.slider-control-left');
+        sliderControlRight = mainElement.querySelector('.slider-control-right');
+        wrapperWidth = parseFloat(getComputedStyle(sliderWrapper).width);
+        itemWidth = parseFloat(getComputedStyle(sliderItems[0]).width);
+        positionLeftItem = 0;
+        transform = 0;
+        indexIndicator = 0;
+        maxIndexIndicator = sliderItems.length - 1;
+        step = itemWidth / wrapperWidth * 100;
+        items = [];
+        sliderItems.forEach(function (item, index) {
+          items.push({ item: item, position: index, transform: 0 });
         });
-        _addIndicators();
+        addIndicators();
       }
 
-      var _setUpListeners = function () {
-        _mainElement.addEventListener('click', _controlClick);
-        if (_config.pause && _config.isCycling) {
-          _mainElement.addEventListener('mouseenter', function () {
-            clearInterval(_interval);
+      let setUpListeners = function () {
+        mainElement.addEventListener('click', controlClick);
+        if (config.pause && config.isCycling) {
+          mainElement.addEventListener('mouseenter', function () {
+            clearInterval(interval);
           });
-          _mainElement.addEventListener('mouseleave', function () {
-            clearInterval(_interval);
-            _cycle(_config.direction);
+          mainElement.addEventListener('mouseleave', function () {
+            clearInterval(interval);
+            cycle(config.direction);
           });
         }
 
-        document.addEventListener('visibilitychange', _handleVisibilityChange, false);
+        document.addEventListener('visibilitychange', handleVisibilityChange, false);
         window.addEventListener('resize', function () {
-          var
-            _index = 0,
+          let
+            index = 0,
             width = parseFloat(document.body.clientWidth);
-          _states.forEach(function (item, index, arr) {
-            if (width >= _states[index].minWidth)
-              _index = index;
+          states.forEach(function (item, index, arr) {
+            if (width >= states[index].minWidth)
+              index = index;
           });
-          if (_index !== _getActive()) {
-            _setActive();
-            _refresh();
+          if (index !== getActive()) {
+            setActive();
+            refresh();
           }
         });
       }
 
-      var _addIndicators = function () {
-        var sliderIndicators = document.createElement('ol');
+      let addIndicators = function () {
+        let sliderIndicators = document.createElement('ol');
         sliderIndicators.classList.add('slider-indicators');
-        for (var i = 0; i < _sliderItems.length; i++) {
-          var sliderIndicatorsItem = document.createElement('li');
+        for (let i = 0; i < sliderItems.length; i++) {
+          let sliderIndicatorsItem = document.createElement('li');
           if (i === 0) {
             sliderIndicatorsItem.classList.add('active');
           }
           sliderIndicatorsItem.setAttribute("data-slide-to", i);
           sliderIndicators.appendChild(sliderIndicatorsItem);
         }
-        _mainElement.appendChild(sliderIndicators);
-        _indicatorItems = _mainElement.querySelectorAll('.slider-indicators > li')
+        mainElement.appendChild(sliderIndicators);
+        indicatorItems = mainElement.querySelectorAll('.slider-indicators > li')
       }
 
       // добавляем индикаторы
-      _addIndicators();
+      addIndicators();
       // инициализация
-      _setUpListeners();
+      setUpListeners();
 
       if (document.visibilityState === "visible") {
-        _cycle(_config.direction);
+        cycle(config.direction);
       }
-      _setActive();
+      setActive();
 
       return {
         right: function () {
-          _transformItem('right');
+          transformItem('right');
         },
         left: function () {
-          _transformItem('left');
+          transformItem('left');
         },
         stop: function () {
-          _config.isCycling = false;
-          clearInterval(_interval);
+          config.isCycling = false;
+          clearInterval(interval);
         },
         cycle: function () {
-          _config.isCycling = true;
-          clearInterval(_interval);
-          _cycle();
+          config.isCycling = true;
+          clearInterval(interval);
+          cycle();
         }
       }
     }
