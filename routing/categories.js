@@ -1,33 +1,34 @@
-'use strict';
+"use strict";
 
 const dbUrl = "https://my-json-server.typicode.com/MalumDominum/AnimeInternetShopDb";
 import { getHashDetails } from "./processor.js";
 
-let constructor = async function(container) {
-    const pageWidth = document.createElement('div');
-    pageWidth.classList.add('page-width');
-    pageWidth.innerHTML = 
-    `<div class="categories">
+let constructor = async function (container) {
+	const pageWidth = document.createElement("div");
+	pageWidth.classList.add("page-width");
+	pageWidth.innerHTML = `<div class="categories">
         <ul class="collection-grid">
         </ul>
     </div>`;
-    container.appendChild(pageWidth);
-    let hash = getHashDetails();
-    await fetch(new Request(dbUrl + '/categories?url=' + hash[1]))
-    .then(function(response) {
-        return response.blob();
-    }).then(async function(blob) {
-        const categoryData = JSON.parse(await blob.text())[0];
-        await fetch(new Request(dbUrl + '/products?categoryId=' + categoryData.id))
-        .then(function(response) {
-        return response.blob();
-        }).then(async function(blob) {
-            const products = JSON.parse(await blob.text());
-            const productsListEl = pageWidth.querySelector('.categories > ul.collection-grid');
-            products.forEach(function (currentProduct){
-                const currentProductEl = document.createElement('li');
-                currentProductEl.classList.add('collection-item');
-                currentProductEl.innerHTML = `
+	container.appendChild(pageWidth);
+	let hash = getHashDetails();
+	await fetch(new Request(dbUrl + "/categories?url=" + hash[1]))
+		.then(function (response) {
+			return response.blob();
+		})
+		.then(async function (blob) {
+			const categoryData = JSON.parse(await blob.text())[0];
+			await fetch(new Request(dbUrl + "/products?categoryId=" + categoryData.id))
+				.then(function (response) {
+					return response.blob();
+				})
+				.then(async function (blob) {
+					const products = JSON.parse(await blob.text());
+					const productsListEl = pageWidth.querySelector(".categories > ul.collection-grid");
+					products.forEach(function (currentProduct) {
+						const currentProductEl = document.createElement("li");
+						currentProductEl.classList.add("collection-item");
+						currentProductEl.innerHTML = `
                 <div data-route="#products/${currentProduct.url}" class="box-image">
                     <a class="collection-item-photo-container">
                         ${currentProduct.sale ? `<p class="sale-label in-collection">${currentProduct.sale}%</p>` : ``}
@@ -35,27 +36,35 @@ let constructor = async function(container) {
                     </a>
                 </div>
                 <div class="collection-item-meta">
-                    ${currentProduct.inStock ? `<div class="in-stock little">В наличии</div>` 
-                                    : `<div class="not-in-stock little">Нет в наличии</div>`}
+                    ${
+						currentProduct.inStock
+							? `<div class="in-stock little">У наявності</div>`
+							: `<div class="not-in-stock little">Немає в наявності</div>`
+					}
                     <p class="collection-item-title">${currentProduct.name}</p>
                     <div class="collection-item-price-container categories">
-                        ${currentProduct.sale ? 
-                            `<p class="product-price discounted">${(currentProduct.price * (100 - currentProduct.sale) / 100).toFixed(2)} грн</p>
-                            <p class="product-price crossed-out">${(currentProduct.price).toFixed(2)} грн</p>`
-                            : `<p class="product-price">${(currentProduct.price).toFixed(2)} грн</p>`}
+                        ${
+							currentProduct.sale
+								? `<p class="product-price discounted">${(
+										(currentProduct.price * (100 - currentProduct.sale)) /
+										100
+								  ).toFixed(2)} грн</p>
+                            <p class="product-price crossed-out">${currentProduct.price.toFixed(2)} грн</p>`
+								: `<p class="product-price">${currentProduct.price.toFixed(2)} грн</p>`
+						}
                     </div>
-                    <button ${currentProduct.inStock ? `` : `disabled` } class="add-to-cart-button little" data-addtocart="${currentProduct.url}">В корзину</button>
+                    <button ${currentProduct.inStock ? `` : `disabled`} class="add-to-cart-button little" data-addtocart="${
+							currentProduct.url
+						}">У кошик</button>
                 </div>
                 `;
-                productsListEl.appendChild(currentProductEl);
-            });
-        });
-    });
-}
+						productsListEl.appendChild(currentProductEl);
+					});
+				});
+		});
+};
 
 export { constructor };
-
-
 
 /*
 <div class="page-width">
