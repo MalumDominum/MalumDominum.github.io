@@ -1,160 +1,222 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Аниме магазин Kistune</title>
-    <link rel="stylesheet" href="style.css" type="text/css"/>
-    <link rel="icon" href="assets/little-logo.png" type="image/icon">
-</head>
-<body>
-    <header class="header-container">
-        <div class="header">
-            <div class="header-logos-container">
-                <a class="header-logo" data-route=""></a>
-                <a class="header-text-logo" data-route=""></a>
-            </div>
-            <div class="header-parent-link">
-                <a href="javascript:;" class="header-link" data-route="#categories/literature">Литература</a>
-                <ul class="header-expanding-panel">
-                    <li class="header-expanding-panel-items">
-                        <a href="javascript:;" class="header-expanding-panel-title-link" data-route="#categories/literature">ПОКАЗАТЬ ВСЕ</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/manga">Манга</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/comics">Комиксы</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/artbook">Артбуки</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/ranobe">Ранобэ</a>
-                    </li>
-                    <li class="header-expanding-panel-items">
-                        <a href="javascript:;" class="header-expanding-panel-title-link">ХАРАКТЕРИСТИКА</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Литература со скидками</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Подарочный набор</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Случайный набор</a>
-                    </li>
-                    <li class="header-expanding-panel-images">
-                        <a href="javascript:;" class="header-expanding-panel-image" style="background-image: url(product-photos/alice-madness-returns.jpg);" data-route="#products/art-of-alice-madness-returns"></a>
-                        <a href="javascript:;" class="header-expanding-panel-image-desription">Новинка</a>
-                    </li>
-                    <li class="header-expanding-panel-images">
-                        <a href="javascript:;" class="header-expanding-panel-image" style="background-image: url(product-photos/adventure-time-of-marceline-and-the-scream-queen.jpg);" data-route="#products/comic-adventure-time-of-marceline-and-the-scream-queen"></a>
-                        <a href="javascript:;" class="header-expanding-panel-image-desription">Новинка</a>
-                    </li>
-                    <li class="header-expanding-panel-images">
-                        <a href="javascript:;" class="header-expanding-panel-image" style="background-image: url(product-photos/re-zero-life-from-scratch-in-an-alternate-world-tom-6.jpg);" data-route="#products/ranobe-re-zero-life-from-scratch-in-an-alternate-world-tom-6"></a>
-                        <a href="javascript:;" class="header-expanding-panel-image-desription">Новинка</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="header-parent-link">
-                <a href="javascript:;" class="header-link" data-route="#categories/clothing">Одежда</a>
-                <ul class="header-expanding-panel">
-                    <li class="header-expanding-panel-items">
-                        <a href="javascript:;" class="header-expanding-panel-title-link" data-route="#categories/clothing">ПОКАЗАТЬ ВСЕ</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/t-shirt">Футболки</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/kigurumi">Кигуруми</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/raglan">Регланы/Худи</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/socks">Носки</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/headwear">Головные уборы</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/cosplay">Косплей</a>
-                    </li>
-                    <li class="header-expanding-panel-items">
-                        <a href="javascript:;" class="header-expanding-panel-title-link">ХАРАКТЕРИСТИКА</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Одежда со скидками</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Подарочный набор</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Случайный набор</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="header-parent-link">
-                <a href="javascript:;" class="header-link" data-route="#categories/accessory">Аксессуары</a>
-                <ul class="header-expanding-panel">
-                    <li class="header-expanding-panel-items">
-                        <a href="javascript:;" class="header-expanding-panel-title-link" data-route="#categories/accessory">ПОКАЗАТЬ ВСЕ</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/pendant">Кулоны</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/rings">Кольца</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/bracelet">Браслеты</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/trinket">Брелки</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/headphones">Наушники</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/backpack">Рюкзаки</a>
-                    </li>
-                    <li class="header-expanding-panel-items">
-                        <a href="javascript:;" class="header-expanding-panel-title-link">ХАРАКТЕРИСТИКА</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Аксессуары со скидками</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Подарочный набор</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Случайный набор</a>
-                    </li>
-                    <li class="header-expanding-panel-images">
-                        <a href="javascript:;" class="header-expanding-panel-image" style="background-image: url(product-photos/drill-gurren-lagann.jpg);" data-route="#products/drill-necklace"></a>
-                        <a href="javascript:;" class="header-expanding-panel-image-desription">Новинка</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="header-parent-link">
-                <a href="javascript:;" class="header-link" data-route="#categories/pillow">Дакимакуры</a>
-                <ul class="header-expanding-panel">
-                    <li class="header-expanding-panel-items">
-                        <a href="javascript:;" class="header-expanding-panel-title-link" data-route="#categories/pillow">ПОКАЗАТЬ ВСЕ</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/mini">Мини подушки 40x30</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/square">Подушки квадратные 45x45</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/rectangular">Подушки прямоугольные 45x60</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/dakimakura">Дакимакуры 150х50</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/dakimakura_adult">Дакимакуры 150х50 18+</a>
-                    </li>
-                    <li class="header-expanding-panel-items">
-                        <a href="javascript:;" class="header-expanding-panel-title-link">ХАРАКТЕРИСТИКА</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Подушки со скидками</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Подарочный набор</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Случайный набор</a>
-                    </li>
-                    <li class="header-expanding-panel-images">
-                        <a href="javascript:;" class="header-expanding-panel-image" style="background-image: url(product-photos/aisaka-taiga-toradora.jpg);" data-route="#products/taiga"></a>
-                        <a href="javascript:;" class="header-expanding-panel-image-desription">Новинка</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="header-parent-link">
-                <a href="javascript:;" class="header-link" data-route="#categories/figurine">Фигурки</a>
-                <ul class="header-expanding-panel">
-                    <li class="header-expanding-panel-items">
-                        <a href="javascript:;" class="header-expanding-panel-title-link" data-route="#categories/figurine">ПОКАЗАТЬ ВСЕ</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/original">Оригинальные японские фигурки</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/copies">Неоригинальные фигурки (Копии)</a>
-                        <a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/sci-fi">Оригинальные фигурки Sci-fi</a>
-                    </li>
-                    <li class="header-expanding-panel-items">
-                        <a href="javascript:;" class="header-expanding-panel-title-link">ХАРАКТЕРИСТИКА</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Фигурки со скидками</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Подарочный набор</a>
-                        <a href="javascript:;" class="header-expanding-panel-link">Случайный набор</a>
-                    </li>
-                    <li class="header-expanding-panel-images">
-                        <a href="javascript:;" class="header-expanding-panel-image" style="background-image: url(product-photos/geos-opm.jpg);" data-route="#products/geos"></a>
-                        <a href="javascript:;" class="header-expanding-panel-image-desription">Новинка</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="header-parent-link">
-                <a href="javascript:;" class="header-link discounts" data-route="#categories/sales" style="color: #FF293E">Акции</a>
-            </div>
-            <div class="header-cart-container">
-                <a href="javascript:;" class="header-link-cart" data-route="#cart"><img src="assets/shopping-cart.svg"/>
-                    <div class="header-cart-counter">3</div>
-                </a>
-                <img src="assets/menu.svg" alt="Expanding menu button" class="header-menu" id="header-menu">
-            </div>
-        </div>
-        <div class="header-mobile hidden" id="header-mobile">
-            <a class="header-mobile-link">Литература</a>
-            <a class="header-mobile-link">Одежда</a>
-            <a class="header-mobile-link">Аксессуары</a>
-            <a class="header-mobile-link">Дакимакуры</a>
-            <a class="header-mobile-link">Фигурки</a>
-            <a class="header-mobile-link" style="color: #FF293E">Акции</a>
-        </div>
-    </header>
+<html lang="ua">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<title>Аніме магазин Kistune</title>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<link rel="icon" href="assets/little-logo.png" type="image/icon" />
+	</head>
+	<body>
+		<header class="header-container">
+			<div class="header">
+				<div class="header-logos-container">
+					<a class="header-logo" data-route=""></a>
+					<a class="header-text-logo" data-route=""></a>
+				</div>
+				<div class="header-parent-link">
+					<a href="javascript:;" class="header-link" data-route="#categories/literature">Література</a>
+					<ul class="header-expanding-panel">
+						<li class="header-expanding-panel-items">
+							<a href="javascript:;" class="header-expanding-panel-title-link" data-route="#categories/literature"
+								>ПОКАЗАТИ ВСЕ</a
+							>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/manga">Манга</a>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/comics">Комікси</a>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/artbook">Артбуки</a>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/ranobe">Ранобе</a>
+						</li>
+						<li class="header-expanding-panel-items">
+							<a href="javascript:;" class="header-expanding-panel-title-link">ХАРАКТЕРИСТИКА</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Література зі знижками</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Подарунковий набір</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Випадковий набір</a>
+						</li>
+						<li class="header-expanding-panel-images">
+							<a
+								href="javascript:;"
+								class="header-expanding-panel-image"
+								style="background-image: url(product-photos/alice-madness-returns.jpg)"
+								data-route="#products/art-of-alice-madness-returns"
+							></a>
+							<a href="javascript:;" class="header-expanding-panel-image-desription">Новинка</a>
+						</li>
+						<li class="header-expanding-panel-images">
+							<a
+								href="javascript:;"
+								class="header-expanding-panel-image"
+								style="background-image: url(product-photos/adventure-time-of-marceline-and-the-scream-queen.jpg)"
+								data-route="#products/comic-adventure-time-of-marceline-and-the-scream-queen"
+							></a>
+							<a href="javascript:;" class="header-expanding-panel-image-desription">Новинка</a>
+						</li>
+						<li class="header-expanding-panel-images">
+							<a
+								href="javascript:;"
+								class="header-expanding-panel-image"
+								style="background-image: url(product-photos/re-zero-life-from-scratch-in-an-alternate-world-tom-6.jpg)"
+								data-route="#products/ranobe-re-zero-life-from-scratch-in-an-alternate-world-tom-6"
+							></a>
+							<a href="javascript:;" class="header-expanding-panel-image-desription">Новинка</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header-parent-link">
+					<a href="javascript:;" class="header-link" data-route="#categories/clothing">Одяг</a>
+					<ul class="header-expanding-panel">
+						<li class="header-expanding-panel-items">
+							<a href="javascript:;" class="header-expanding-panel-title-link" data-route="#categories/clothing"
+								>ПОКАЗАТИ ВСЕ</a
+							>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/t-shirt">Футболки</a>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/kigurumi">Кігурумі</a>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/raglan">Реглани/Худі</a>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/socks">Шкарпетки</a>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/headwear"
+								>Головні убори</a
+							>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/cosplay">Косплей</a>
+						</li>
+						<li class="header-expanding-panel-items">
+							<a href="javascript:;" class="header-expanding-panel-title-link">ХАРАКТЕРИСТИКА</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Одяг зі знижками</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Подарунковий набір</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Випадковий набір</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header-parent-link">
+					<a href="javascript:;" class="header-link" data-route="#categories/accessory">Аксесуари</a>
+					<ul class="header-expanding-panel">
+						<li class="header-expanding-panel-items">
+							<a href="javascript:;" class="header-expanding-panel-title-link" data-route="#categories/accessory"
+								>ПОКАЗАТИ ВСЕ</a
+							>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/pendant">Кулони</a>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/rings">Кільця</a>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/bracelet">Браслети</a>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/trinket">Брелки</a>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/headphones"
+								>Навушники</a
+							>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/backpack">Рюкзаки</a>
+						</li>
+						<li class="header-expanding-panel-items">
+							<a href="javascript:;" class="header-expanding-panel-title-link">ХАРАКТЕРИСТИКА</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Аксесуари зі знижками</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Подарунковий набір</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Випадковий набір</a>
+						</li>
+						<li class="header-expanding-panel-images">
+							<a
+								href="javascript:;"
+								class="header-expanding-panel-image"
+								style="background-image: url(product-photos/drill-gurren-lagann.jpg)"
+								data-route="#products/drill-necklace"
+							></a>
+							<a href="javascript:;" class="header-expanding-panel-image-desription">Новинка</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header-parent-link">
+					<a href="javascript:;" class="header-link" data-route="#categories/pillow">Дакімакури</a>
+					<ul class="header-expanding-panel">
+						<li class="header-expanding-panel-items">
+							<a href="javascript:;" class="header-expanding-panel-title-link" data-route="#categories/pillow"
+								>ПОКАЗАТИ ВСЕ</a
+							>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/mini"
+								>Міни подушки 40x30</a
+							>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/square"
+								>Подушки квадратні 45x45</a
+							>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/rectangular"
+								>Подушки прямокутні 45x60</a
+							>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/dakimakura"
+								>Дакімакури 150х50</a
+							>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/dakimakura_adult"
+								>Дакімакури 150х50 18+</a
+							>
+						</li>
+						<li class="header-expanding-panel-items">
+							<a href="javascript:;" class="header-expanding-panel-title-link">ХАРАКТЕРИСТИКА</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Подушки зі знижками</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Подарунковий набір</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Випадковий набір</a>
+						</li>
+						<li class="header-expanding-panel-images">
+							<a
+								href="javascript:;"
+								class="header-expanding-panel-image"
+								style="background-image: url(product-photos/aisaka-taiga-toradora.jpg)"
+								data-route="#products/taiga"
+							></a>
+							<a href="javascript:;" class="header-expanding-panel-image-desription">Новинка</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header-parent-link">
+					<a href="javascript:;" class="header-link" data-route="#categories/figurine">Фігурки</a>
+					<ul class="header-expanding-panel">
+						<li class="header-expanding-panel-items">
+							<a href="javascript:;" class="header-expanding-panel-title-link" data-route="#categories/figurine"
+								>ПОКАЗАТИ ВСЕ</a
+							>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/original"
+								>Оригінальні японські фігурки</a
+							>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/copies"
+								>Неоригінальні фігурки (Копії)</a
+							>
+							<a href="javascript:;" class="header-expanding-panel-link" data-route="#categories/sci-fi"
+								>Оригінальні фігурки Sci-fi</a
+							>
+						</li>
+						<li class="header-expanding-panel-items">
+							<a href="javascript:;" class="header-expanding-panel-title-link">ХАРАКТЕРИСТИКА</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Фігурки зі знижками</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Подарунковий набір</a>
+							<a href="javascript:;" class="header-expanding-panel-link">Випадковий набір</a>
+						</li>
+						<li class="header-expanding-panel-images">
+							<a
+								href="javascript:;"
+								class="header-expanding-panel-image"
+								style="background-image: url(product-photos/geos-opm.jpg)"
+								data-route="#products/geos"
+							></a>
+							<a href="javascript:;" class="header-expanding-panel-image-desription">Новинка</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header-parent-link">
+					<a href="javascript:;" class="header-link discounts" data-route="#categories/sales" style="color: #ff293e"
+						>Акції</a
+					>
+				</div>
+				<div class="header-cart-container">
+					<a href="javascript:;" class="header-link-cart" data-route="#cart"
+						><img src="assets/shopping-cart.svg" />
+						<div class="header-cart-counter">3</div>
+					</a>
+					<img src="assets/menu.svg" alt="Expanding menu button" class="header-menu" id="header-menu" />
+				</div>
+			</div>
+			<div class="header-mobile hidden" id="header-mobile">
+				<a class="header-mobile-link">Література</a>
+				<a class="header-mobile-link">Одяг</a>
+				<a class="header-mobile-link">Аксесуари</a>
+				<a class="header-mobile-link">Дакімакури</a>
+				<a class="header-mobile-link">Фігурки</a>
+				<a class="header-mobile-link" style="color: #ff293e">Акції</a>
+			</div>
+		</header>
 
-
-    <div id="router">
-        <!-- <div class="page-width">
+		<div id="router">
+			<!-- <div class="page-width">
             <div class="categories">
                 <div class="shop-sidebar">
                     <div class="shop-sidebar-section">
@@ -209,113 +271,111 @@
                 </div>
             </div>
         </div> -->
-    </div>
+		</div>
 
+		<div class="banner fall-bg">
+			<div class="banner-socials">
+				<p>Ми в соціальних мережах</p>
+				<a><img src="assets/facebook-logotype.svg" alt="Facebook logo" /></a>
+				<a><img src="assets/telegram-logotype.svg" alt="Telegram logo" /></a>
+				<a><img src="assets/twitter-logotype.svg" alt="Twitter logo" /></a>
+			</div>
+			<div class="banner-telegram-bot">
+				<h4 class="banner-title">ПОЧНІТЬ ВИКОРИСТАННЯ НАШОГО ТЕЛЕГРАМ БОТА</h4>
+				<a><img src="assets/bot.svg" alt="Bot icon" /></a>
+			</div>
+		</div>
 
-    <div class="banner fall-bg">
-        <div class="banner-socials">
-            <p>Мы в социальных сетях</p>
-            <a><img src="assets/facebook-logotype.svg" alt="Facebook logo"></a>
-            <a><img src="assets/telegram-logotype.svg" alt="Telegram logo"></a>
-            <a><img src="assets/vk-logotype.svg" alt="Vk logo"></a>
-            <a><img src="assets/twitter-logotype.svg" alt="Twitter logo"></a>
-        </div>
-        <div class="banner-telegram-bot">
-            <h4 class="banner-title">НАЧНИТЕ ИСПОЛЬЗОВАНИЕ НАШЕГО ТЕЛЕГРАМ БОТА</h4>
-            <a><img src="assets/bot.svg" alt="Bot icon"></a>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <nav class="footer-nav">
-            <div class="footer-nav-col">
-                <div class="footer-nav-col-container">
-                    <h5 class="footer-nav-title">ПОМОЩЬ И ОБСЛУЖИВАНИЕ КЛИЕНТОВ</h5>
-                    <p class="footer-nav-item">
-                        <a class="footer-nav-link">FAQ</a>
-                    </p>
-                    <p class="footer-nav-item">
-                        <a class="footer-nav-link">Список отложенных предварительных заказов</a>
-                    </p>
-                    <p class="footer-nav-item">
-                        <a class="footer-nav-link">Доставка и возврат</a>
-                    </p>
-                    <p class="footer-nav-item">
-                        <a class="footer-nav-link">Свяжитесь с нами</a>
-                    </p>
-                    <p class="footer-nav-item">
-                        <a class="footer-nav-link">Про нас</a>
-                    </p>
-                </div>
-            </div>
-            <div class="footer-nav-col">
-                <div class="footer-nav-col-container">
-                    <h5 class="footer-nav-title">ПРО KITSUNE SHOP</h5>
-                    <p class="footer-nav-item">
-                        <a class="footer-nav-link">Новости Kitsune</a>
-                    </p>
-                    <p class="footer-nav-item">
-                        <a class="footer-nav-link">Условия использования</a>
-                    </p>
-                    <p class="footer-nav-item">
-                        <a class="footer-nav-link">Политика авторских прав</a>
-                    </p>
-                    <p class="footer-nav-item">
-                        <a class="footer-nav-link">Политика конфиденциальности</a>
-                    </p>
-                </div>
-            </div>
-            <div class="footer-nav-col">
-                <div class="footer-nav-col-container">
-                    <h5 class="footer-nav-title">ПОЛЕЗНЫЕ ССЫЛКИ</h5>
-                    <p class="footer-nav-item">
-                        <a class="footer-nav-link">Вход в систему</a>
-                    </p>
-                    <p class="footer-nav-item">
-                        <a class="footer-nav-link">Стать премиум-подписчиком</a>
-                    </p>
-                    <p class="footer-nav-item">
-                        <a class="footer-nav-link">Отложенные предварительные заказы</a>
-                    </p>
-                </div>
-            </div>
-            <div class="footer-nav-col">
-                <div class="footer-nav-col-container">
-                    <div class="footer-nav-image" style="background-image: url(assets/kitsune-footer.svg);"></div>
-                </div>
-            </div>
-            <ul class="footer-nav-mobile">
-                <li class="footer-nav-mobile-panel">
-                    <h5 class="footer-nav-mobile-title">ПОМОЩЬ И ОБСЛУЖИВАНИЕ КЛИЕНТОВ</h5>
-                    <div class="footer-nav-container-mobile hidden">
-                        <a class="footer-nav-link-mobile">FAQ</a>
-                        <a class="footer-nav-link-mobile">Список отложенных предварительных заказов</a>
-                        <a class="footer-nav-link-mobile">Доставка и возврат</a>
-                        <a class="footer-nav-link-mobile">Свяжитесь с нами</a>
-                        <a class="footer-nav-link-mobile">Про нас</a>
-                    </div>
-                </li>
-                <li class="footer-nav-mobile-panel">
-                    <h5 class="footer-nav-mobile-title">ПРО KITSUNE SHOP</h5>
-                    <div class="footer-nav-container-mobile hidden">
-                        <a class="footer-nav-link-mobile">Новости Kitsune</a>
-                        <a class="footer-nav-link-mobile">Условия использования</a>
-                        <a class="footer-nav-link-mobile">Политика авторских прав</a>
-                        <a class="footer-nav-link-mobile">Политика конфиденциальности</a>
-                    </div>
-                </li>
-                <li class="footer-nav-mobile-panel">
-                    <h5 class="footer-nav-mobile-title">ПОЛЕЗНЫЕ ССЫЛКИ</h5>
-                    <div class="footer-nav-container-mobile hidden">
-                        <a class="footer-nav-link-mobile">Вход в систему</a>
-                        <a class="footer-nav-link-mobile">Стать премиум-подпсичиком</a>
-                        <a class="footer-nav-link-mobile">Отложенные предварительные заказы</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </footer>
-    <script src="script.js"></script>
-    <script type="module" src="routing/routing.js"></script>
-</body>
+		<footer class="footer">
+			<nav class="footer-nav">
+				<div class="footer-nav-col">
+					<div class="footer-nav-col-container">
+						<h5 class="footer-nav-title">ДОПОМОГА ТА ОБСЛУГОВУВАННЯ КЛІЄНТІВ</h5>
+						<p class="footer-nav-item">
+							<a class="footer-nav-link">FAQ</a>
+						</p>
+						<p class="footer-nav-item">
+							<a class="footer-nav-link">Список відкладених попередніх замовлень</a>
+						</p>
+						<p class="footer-nav-item">
+							<a class="footer-nav-link">Доставка і повернення</a>
+						</p>
+						<p class="footer-nav-item">
+							<a class="footer-nav-link">Зв'яжіться з нами</a>
+						</p>
+						<p class="footer-nav-item">
+							<a class="footer-nav-link">Про нас</a>
+						</p>
+					</div>
+				</div>
+				<div class="footer-nav-col">
+					<div class="footer-nav-col-container">
+						<h5 class="footer-nav-title">ПРО KITSUNE SHOP</h5>
+						<p class="footer-nav-item">
+							<a class="footer-nav-link">Новини Kitsune</a>
+						</p>
+						<p class="footer-nav-item">
+							<a class="footer-nav-link">Умови використання</a>
+						</p>
+						<p class="footer-nav-item">
+							<a class="footer-nav-link">Політика авторських прав</a>
+						</p>
+						<p class="footer-nav-item">
+							<a class="footer-nav-link">Політика конфіденційності</a>
+						</p>
+					</div>
+				</div>
+				<div class="footer-nav-col">
+					<div class="footer-nav-col-container">
+						<h5 class="footer-nav-title">КОРИСНІ ПОСИЛАННЯ</h5>
+						<p class="footer-nav-item">
+							<a class="footer-nav-link">Вхід у систему</a>
+						</p>
+						<p class="footer-nav-item">
+							<a class="footer-nav-link">Стати преміум-підписником</a>
+						</p>
+						<p class="footer-nav-item">
+							<a class="footer-nav-link">Відкладені попередні замовлення</a>
+						</p>
+					</div>
+				</div>
+				<div class="footer-nav-col">
+					<div class="footer-nav-col-container">
+						<div class="footer-nav-image" style="background-image: url(assets/kitsune-footer.svg)"></div>
+					</div>
+				</div>
+				<ul class="footer-nav-mobile">
+					<li class="footer-nav-mobile-panel">
+						<h5 class="footer-nav-mobile-title">ДОПОМОГА ТА ОБСЛУГОВУВАННЯ КЛІЄНТІВ</h5>
+						<div class="footer-nav-container-mobile hidden">
+							<a class="footer-nav-link-mobile">FAQ</a>
+							<a class="footer-nav-link-mobile">Список відкладених попередніх замовлень</a>
+							<a class="footer-nav-link-mobile">Доставка і повернення</a>
+							<a class="footer-nav-link-mobile">Зв'яжіться з нами</a>
+							<a class="footer-nav-link-mobile">Про нас</a>
+						</div>
+					</li>
+					<li class="footer-nav-mobile-panel">
+						<h5 class="footer-nav-mobile-title">ПРО KITSUNE SHOP</h5>
+						<div class="footer-nav-container-mobile hidden">
+							<a class="footer-nav-link-mobile">Новини Kitsune</a>
+							<a class="footer-nav-link-mobile">Умови використання</a>
+							<a class="footer-nav-link-mobile">Політика авторських прав</a>
+							<a class="footer-nav-link-mobile">Політика конфіденційності</a>
+						</div>
+					</li>
+					<li class="footer-nav-mobile-panel">
+						<h5 class="footer-nav-mobile-title">КОРИСНІ ПОСИЛАННЯ</h5>
+						<div class="footer-nav-container-mobile hidden">
+							<a class="footer-nav-link-mobile">Вхід у систему</a>
+							<a class="footer-nav-link-mobile">Стати преміум-підписником</a>
+							<a class="footer-nav-link-mobile">Відкладені попередні замовлення</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</footer>
+		<script src="script.js"></script>
+		<script type="module" src="routing/routing.js"></script>
+	</body>
 </html>
